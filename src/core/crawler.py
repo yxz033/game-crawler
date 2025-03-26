@@ -156,6 +156,7 @@ class GameCrawler:
         self.progress_file = "crawl_progress.json"
         self.stats = {"success": 0, "failed": 0}
         self.game_cache = {}  # 游戏数据缓存
+        self.game_buffer = []  # 游戏信息缓冲区，用于批量更新索引
         self.setup_logging()
 
     def setup_selenium(self):
@@ -199,30 +200,58 @@ class GameCrawler:
             
     def download_and_convert_image(self, url: str, save_path: str, max_width: int = None, quality: int = 85):
         """下载图片并转换为WebP格式"""
+        if not url:
+            return None
+            
+        # 创建目录
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        
         try:
-            # 创建保存目录
-            os.makedirs(os.path.dirname(save_path), exist_ok=True)
+            # 设置请求超时和重试
+            session = requests.Session()
+            retry = 0
+            max_retries = 3
+            timeout = 10  # 设置超时为10秒
             
-            # 下载图片
-            response = requests.get(url, stream=True)
-            response.raise_for_status()
+            while retry < max_retries:
+                try:
+                    # 使用超时机制防止请求卡住
+                    response = session.get(url, timeout=timeout)
+                    response.raise_for_status()  # 如果状态码不是200，将引发HTTPError异常
+                    break
+                except (requests.RequestException, IOError) as e:
+                    retry += 1
+                    if retry >= max_retries:
+                        self.logger.error(f"下载图片失败(已重试{retry}次): {url} - {str(e)}")
+                        return None
+                    # 使用指数退避算法增加重试间隔
+                    wait_time = 0.5 * (2 ** retry)
+                    self.logger.warning(f"下载图片重试({retry}/{max_retries})，等待{wait_time}秒: {url}")
+                    time.sleep(wait_time)
             
-            # 打开图片
-            img = Image.open(io.BytesIO(response.content))
+            # 图片处理和转换
+            image_data = io.BytesIO(response.content)
+            img = Image.open(image_data)
             
-            # 调整大小
+            # 如果指定了最大宽度，则按比例缩放
             if max_width and img.width > max_width:
                 ratio = max_width / img.width
-                new_size = (max_width, int(img.height * ratio))
-                img = img.resize(new_size, Image.Resampling.LANCZOS)
+                new_width = max_width
+                new_height = int(img.height * ratio)
+                img = img.resize((new_width, new_height), Image.LANCZOS)
             
+            # 确保图片模式为RGB
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+                
             # 保存为WebP格式
             img.save(save_path, 'WEBP', quality=quality)
-            print(f"图片已保存到: {save_path}")
-            return True
+            self.logger.debug(f"图片已保存: {save_path}")
+            
+            return save_path
         except Exception as e:
-            print(f"处理图片时出错: {str(e)}")
-            return False
+            self.logger.error(f"处理图片时出错: {url} - {str(e)}")
+            return None
             
     def download_file(self, url: str, save_path: str):
         """下载文件到指定路径，保留原始格式"""
@@ -259,6 +288,10 @@ class GameCrawler:
         """爬取所有游戏"""
         print("\n=== 游戏爬虫启动 ===")
         progress = self.load_progress()
+        
+        # 添加批量保存进度的计数器
+        processed_count = 0
+        batch_size = 10  # 每处理10个游戏保存一次进度
         
         try:
             self.driver.get(self.base_url)
@@ -314,10 +347,27 @@ class GameCrawler:
                             if game_info:
                                 # 更新缓存
                                 self.game_cache[game_info["id"]] = game_info
-                                self.update_index([game_info])
+                                
+                                # 添加到游戏缓冲区，以便批量更新索引
+                                self.game_buffer.append(game_info)
+                                
+                                # 批量处理计数
+                                processed_count += 1
+                                
+                                # 当缓冲区达到一定大小时，批量更新索引
+                                if len(self.game_buffer) >= batch_size:
+                                    self.update_index(self.game_buffer)
+                                    self.logger.info(f"已批量更新索引，游戏数：{len(self.game_buffer)}")
+                                    self.game_buffer = []  # 清空缓冲区
+                                
                                 progress["last_game"] = game["url"]
                                 progress["processed_games"].append(game["url"])
-                                self.save_progress(progress)
+                                
+                                # 批量保存进度，仅在处理了一批游戏后保存
+                                if processed_count % batch_size == 0:
+                                    self.save_progress(progress)
+                                    self.logger.info(f"已批量保存进度，当前处理: {processed_count}/{total_games}")
+                                
                                 self.stats["success"] += 1
                             else:
                                 self.stats["failed"] += 1
@@ -331,14 +381,26 @@ class GameCrawler:
                     # 更新进度条
                     pbar.update(1)
                     
-                    # 随机延迟1-3秒,避免请求过快
-                    time.sleep(random.uniform(1, 3))
+                    # 智能控制请求速率，仅在连续请求时短暂延迟
+                    # 使用较小的延迟，因为大部分等待已经由显式等待处理
+                    if processed_count % 5 == 0:  # 每5个请求后短暂延迟
+                        time.sleep(random.uniform(0.5, 1.5))
                     
                 except Exception as e:
                     self.logger.error(f"解析游戏元素时出错: {str(e)}")
                     self.stats["failed"] += 1
                     pbar.update(1)
             
+            # 确保最后处理的游戏也被保存
+            if processed_count % batch_size != 0:
+                self.save_progress(progress)
+            
+            # 确保缓冲区中的游戏也都更新到索引中
+            if self.game_buffer:
+                self.update_index(self.game_buffer)
+                self.logger.info(f"已更新剩余 {len(self.game_buffer)} 个游戏到索引")
+                self.game_buffer = []
+                
             pbar.close()
             print(f"\n=== 爬虫运行完成 ===")
             print(f"成功: {self.stats['success']} | 失败: {self.stats['failed']}")
@@ -346,6 +408,16 @@ class GameCrawler:
             
         except Exception as e:
             self.logger.error(f"爬取过程中出现错误: {str(e)}")
+            
+            # 确保发生异常时也保存已处理的游戏
+            if self.game_buffer:
+                try:
+                    self.update_index(self.game_buffer)
+                    self.logger.info(f"异常退出前保存 {len(self.game_buffer)} 个游戏到索引")
+                except Exception as save_error:
+                    self.logger.error(f"异常退出时保存索引失败: {str(save_error)}")
+                
+            self.save_progress(progress)
         finally:
             if hasattr(self, 'driver'):
                 self.driver.quit()
@@ -414,12 +486,17 @@ class GameCrawler:
             self.logger.debug(f"访问URL: {game_url}")
             self.driver.get(game_url)
             
-            # 等待页面加载
+            # 等待页面基本元素加载
             wait = WebDriverWait(self.driver, 10)
             wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
             
-            # 等待游戏iframe加载
-            time.sleep(5)  # 给页面一些时间加载JavaScript
+            # 等待游戏内容加载 - 使用具体元素而不是固定等待
+            try:
+                # 尝试等待游戏描述或游戏图片等关键元素
+                wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".Content h4, .GamePage__Tags, iframe.PlayFrame")))
+                self.logger.debug("游戏详情页面关键元素已加载")
+            except Exception as e:
+                self.logger.warning(f"等待游戏详情元素超时: {str(e)}")
             
             # 获取页面源代码
             page_source = self.driver.page_source
@@ -686,10 +763,32 @@ class GameCrawler:
         # 创建进度条
         pbar = tqdm(desc="加载游戏列表", unit="个")
         
+        # 创建WebDriverWait对象
+        wait = WebDriverWait(self.driver, 10)
+        
         while True:
             # 滚动到页面底部
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(self.scroll_pause_time)
+            
+            # 使用显式等待，等待新游戏加载
+            try:
+                # 记录当前游戏数量
+                current_count = len(self.driver.find_elements(By.CSS_SELECTOR, '.Listed__Game'))
+                
+                # 如果游戏数量没有变化，尝试通过等待DOM变化来检测新内容
+                if current_count == games_count:
+                    # 等待新游戏加载或超时
+                    start_time = time.time()
+                    while time.time() - start_time < 3:  # 最多等待3秒
+                        new_count = len(self.driver.find_elements(By.CSS_SELECTOR, '.Listed__Game'))
+                        if new_count > current_count:
+                            current_count = new_count
+                            break
+                        # 短暂等待，避免过度消耗CPU
+                        time.sleep(0.2)
+                
+            except Exception as e:
+                self.logger.debug(f"等待新游戏加载时出错: {str(e)}")
             
             # 获取当前游戏数量
             current_games = len(self.driver.find_elements(By.CSS_SELECTOR, '.Listed__Game'))
@@ -713,15 +812,28 @@ class GameCrawler:
                 no_change_count = 0
         
         pbar.close()
+        self.logger.info(f"页面滚动完成，共加载 {games_count} 个游戏")
 
     def update_index(self, games: List[Dict]):
-        """更新游戏索引文件"""
+        """批量更新游戏索引文件"""
+        if not games:
+            return
+            
+        self.logger.debug(f"正在批量更新索引，游戏数量: {len(games)}")
         index_file = "games/metadata/index.json"
         
         # 读取现有索引
         if os.path.exists(index_file):
-            with open(index_file, "r", encoding="utf-8") as f:
-                index = json.load(f)
+            try:
+                with open(index_file, "r", encoding="utf-8") as f:
+                    index = json.load(f)
+            except Exception as e:
+                self.logger.error(f"读取索引文件失败: {str(e)}")
+                index = {
+                    "lastUpdated": "",
+                    "games": [],
+                    "categories": []
+                }
         else:
             index = {
                 "lastUpdated": "",
@@ -729,13 +841,23 @@ class GameCrawler:
                 "categories": []
             }
         
-        # 更新游戏列表
+        # 创建ID到索引的映射，加速查找
+        game_map = {game["id"]: i for i, game in enumerate(index["games"])}
+        
+        # 批量更新游戏列表
+        updated_count = 0
+        added_count = 0
+        
         for game in games:
             # 读取统计数据
             stats_file = f"games/metadata/{game['id']}/stats.json"
             if os.path.exists(stats_file):
-                with open(stats_file, "r", encoding="utf-8") as f:
-                    stats = json.load(f)
+                try:
+                    with open(stats_file, "r", encoding="utf-8") as f:
+                        stats = json.load(f)
+                except Exception as e:
+                    self.logger.warning(f"读取游戏统计数据失败: {game['id']} - {str(e)}")
+                    stats = {"rating": 0, "plays": 0}
             else:
                 stats = {"rating": 0, "plays": 0}
             
@@ -750,36 +872,41 @@ class GameCrawler:
                 "added": game["addedDate"]
             }
             
-            # 检查是否已存在
-            existing = next((g for g in index["games"] if g["id"] == game["id"]), None)
-            if existing:
-                existing.update(game_index)
+            # 检查是否已存在并更新
+            if game["id"] in game_map:
+                index_pos = game_map[game["id"]]
+                index["games"][index_pos].update(game_index)
+                updated_count += 1
             else:
                 index["games"].append(game_index)
+                game_map[game["id"]] = len(index["games"]) - 1
+                added_count += 1
         
         # 更新分类信息
-        categories = {}
+        category_map = {}
         for game in index["games"]:
-            cat = game["category"]
+            cat = game.get("category", "")
             if cat:
-                if cat not in categories:
-                    categories[cat] = {
-                        "id": cat.lower().replace(" ", "_"),
+                if cat not in category_map:
+                    category_map[cat] = {
+                        "id": self.sanitize_id(cat),
                         "name": cat,
                         "count": 0
                     }
-                categories[cat]["count"] += 1
+                category_map[cat]["count"] += 1
         
-        index["categories"] = list(categories.values())
+        index["categories"] = list(category_map.values())
         index["lastUpdated"] = time.strftime("%Y-%m-%d")
         
         # 保存索引
         os.makedirs(os.path.dirname(index_file), exist_ok=True)
-        with open(index_file, "w", encoding="utf-8") as f:
-            json.dump(index, f, ensure_ascii=False, indent=2)
+        try:
+            with open(index_file, "w", encoding="utf-8") as f:
+                json.dump(index, f, ensure_ascii=False, indent=2)
+            self.logger.info(f"索引已更新: 添加 {added_count} 个新游戏, 更新 {updated_count} 个现有游戏")
+        except Exception as e:
+            self.logger.error(f"保存索引文件失败: {str(e)}")
             
-        print(f"索引已更新: {index_file}")
-        
 if __name__ == "__main__":
     crawler = GameCrawler()
     crawler.crawl() 

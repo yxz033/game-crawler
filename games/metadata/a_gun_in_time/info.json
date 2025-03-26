@@ -1,0 +1,22 @@
+{
+  "id": "a_gun_in_time",
+  "title": "A Gun, in Time!",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/a-gun-in-time_0.swf",
+  "description": "Battle waves of enemies and level up to gain additional perks. Collect coins and survive for as long as possible.",
+  "developer": "Point Publishing",
+  "category": "Fighting",
+  "tags": [],
+  "controls": "WASD or Arrow keys = Move<br>Mouse = Aim and Shoot<br>Escape = Pause",
+  "thumbnailUrl": "/games/assets/a_gun_in_time/thumbnail.png",
+  "previewUrl": "/games/assets/a_gun_in_time/thumbnail.png",
+  "previewVideoUrl": "/games/assets/a_gun_in_time/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jan 3, 2017",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/a-gun-in-time_0.swf"
+}

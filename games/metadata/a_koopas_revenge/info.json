@@ -1,0 +1,22 @@
+{
+  "id": "a_koopas_revenge",
+  "title": "A Koopas Revenge",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/akoopasrevenge_0.swf",
+  "description": "A Koopas Revenge is a free platformer game. After all of that turtle-shell stomping, the koopa finally had enough. Show Mario who his daddy is and head through Bowser's castle.",
+  "developer": "MCSM Studios",
+  "category": "Platform",
+  "tags": [],
+  "controls": "See game for instructions",
+  "thumbnailUrl": "/games/assets/a_koopas_revenge/thumbnail.jpg",
+  "previewUrl": "/games/assets/a_koopas_revenge/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/a_koopas_revenge/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jul 6, 2006",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/akoopasrevenge_0.swf"
+}

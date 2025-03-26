@@ -1,0 +1,22 @@
+{
+  "id": "a_halloween_horror",
+  "title": "A Halloween Horror",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/ahalloweenhorror.swf",
+  "description": "",
+  "developer": "Tamugaia Project",
+  "category": "Fighting",
+  "tags": [],
+  "controls": "WSAD to move  H - attack  G - jump  J - shoot (must unlock first)  spacebar - dash (must unlock first)",
+  "thumbnailUrl": "/games/assets/a_halloween_horror/thumbnail.jpg",
+  "previewUrl": "/games/assets/a_halloween_horror/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/a_halloween_horror/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 26, 2006",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/ahalloweenhorror.swf"
+}

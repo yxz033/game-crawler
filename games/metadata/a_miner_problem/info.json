@@ -1,0 +1,22 @@
+{
+  "id": "a_miner_problem",
+  "title": "A Miner Problem",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/aminerproblem.swf",
+  "description": "Match three by sliding. But obstacles abound, and you need to do it in the right order. Get your head into it, bud!",
+  "developer": "Aaron Sequeira",
+  "category": "Brain Teasers & Quizzes",
+  "tags": [],
+  "controls": "mousers to move",
+  "thumbnailUrl": "/games/assets/a_miner_problem/thumbnail.jpg",
+  "previewUrl": "/games/assets/a_miner_problem/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/a_miner_problem/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Dec 22, 2009",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/aminerproblem.swf"
+}
