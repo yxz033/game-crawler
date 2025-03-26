@@ -1,0 +1,22 @@
+{
+  "id": "50_states",
+  "title": "50 States",
+  "url": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/50states/index.html",
+  "description": "50 States is an educational online game where you get to test your high school knowledge. Place the state on the map and show off your geography skills in this fun online game. You might be fresh out of high school or it may have been a while for you. Either way, maybe you want a refresher on your Western maps or maybe you never learned it in the first place. Play this casual online game that educates you on the location of American states. Challenge your friends and even your teachers on their knowledge of the US map in this fun casual game. Once you’ve finished the game, test what you’ve learned and to see if you can beat your previous score.",
+  "developer": "Leadpipe Games & AddictingGames",
+  "category": "Classic",
+  "tags": [],
+  "controls": "To play 50 States, drag states with your mouse to where you think they belong. Once you let go of the state, the game will let you if you’re wrong and by how many miles. You’ll also find your stats to see how well you’re doing. If the state is wrong, it will then ask you to drag the state to the correct place by showing you where it goes. Sounds easy right? So what are you waiting for? Play this fun geography game today!",
+  "thumbnailUrl": "/games/assets/50_states/thumbnail.png",
+  "previewUrl": "/games/assets/50_states/thumbnail.png",
+  "previewVideoUrl": "/games/assets/50_states/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jan 3, 2007",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/50states/index.html"
+}

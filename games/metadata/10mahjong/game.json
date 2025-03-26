@@ -1,0 +1,22 @@
+{
+  "id": "10mahjong",
+  "title": "10Mahjong",
+  "url": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/10-mahjong/index.html",
+  "description": "",
+  "developer": "",
+  "category": "HTML5",
+  "tags": [],
+  "controls": "",
+  "thumbnailUrl": "/games/assets/10mahjong/thumbnail.jpg",
+  "previewUrl": "/games/assets/10mahjong/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/10mahjong/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "May 2, 2019",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/10-mahjong/index.html"
+}

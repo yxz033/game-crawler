@@ -1,0 +1,22 @@
+{
+  "id": "40xescape",
+  "title": "40xEscape",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/40xescape_0.swf",
+  "description": "40xEscape is a free escape game. All you need to do is light up the ESCAPE sign, and you can go. Go on to the next puzzle, that is. Click to solve each riddle and open the door. What about the bird? Is he here to help? To mock your pathetic attempts? Did he order a pizza? Only one way to find out, yeah?",
+  "developer": "Bart Bonte",
+  "category": "Escape",
+  "tags": [],
+  "controls": "mouse to click",
+  "thumbnailUrl": "/games/assets/40xescape/thumbnail.jpg",
+  "previewUrl": "/games/assets/40xescape/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/40xescape/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Nov 2, 2012",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/40xescape_0.swf"
+}

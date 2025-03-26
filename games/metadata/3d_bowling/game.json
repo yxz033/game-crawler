@@ -1,0 +1,22 @@
+{
+  "id": "3d_bowling",
+  "title": "3D Bowling",
+  "url": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/3d-bowling/index.html",
+  "description": "3D Bowling is a free online sports game that has two-player capabilities! Play by yourself or with a pal with this online version game of bowling. This sports game is like entering a real bowling alley with its bright colors, bricked walls, and wooden lanes. Its 3D animation brings this game to life!. Enter this realistic looking bowling alley but compete against a computer opponent that’s ready to take you out. You have the option of choosing from easy, medium, and hard for your competitor. Don’t want to play against a robot? Then invite your pal over and play against them with two-player mode. Each of you can take turns and see who is the best at online bowling! You can also choose from 5 frames or 10 frames depending on how long you want the game to last. There’s plenty of in-game options to give you an exciting round of bowling each time you play. Don’t hesitate to go bowling with this online version of the game!",
+  "developer": "Famobi",
+  "category": "Easy",
+  "tags": [],
+  "controls": "To play this free sports game, select your preferences and get to bowling. Use your finger or mouse to aim and roll the bowling ball down the alley. You can view you and your opponent’s scores at the top of the screen.",
+  "thumbnailUrl": "/games/assets/3d_bowling/thumbnail.jpg",
+  "previewUrl": "/games/assets/3d_bowling/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/3d_bowling/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Feb 14, 2020",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/3d-bowling/index.html"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "3_in_a_row",
+  "title": "3 In A Row",
+  "url": "https://cdn.mathgames.com/content/3inarow/index.html",
+  "description": "3 in A Row is a timed matching game that lets you practice math skills in between sessions. The matching portion of this online game comes in 3 levels: easy, medium, and hard. Practice your memorization skills with this online game. Flip the cards and find the other 2 cards with the same matching symbol. The more difficult level selects have more cards for you to flip over creating a bigger challenge. Compete against yourself by trying to beat your best score every time! Once you have played a matching game, practice your math skills by answering 5 questions correctly. There are various math skills available from preschool to the eighth grade. There are easy math skills like addition and subtraction and more advanced math skills like fractions and decimals. This is the kind of educational game that helps break up math between fun sessions of an online game!",
+  "developer": "Math Games",
+  "category": "Educational",
+  "tags": [],
+  "controls": "To play this matching game, click on the cards to turn them over. Find 3 cards with the same matching symbols until all the cards are matched. For the math game portion, select your grade and the math skill you need to practice. You can always change your skill if you mastered it or if you need a break from it.",
+  "thumbnailUrl": "/games/assets/3_in_a_row/thumbnail.jpg",
+  "previewUrl": "/games/assets/3_in_a_row/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/3_in_a_row/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jul 9, 2021",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn.mathgames.com/content/3inarow/index.html"
+}

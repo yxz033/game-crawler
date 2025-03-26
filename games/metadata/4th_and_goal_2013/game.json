@@ -1,0 +1,22 @@
+{
+  "id": "4th_and_goal_2013",
+  "title": "4th and Goal 2013",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/4thandgoal2013.swf",
+  "description": "4th and Goal 2013 is a free sports game. Tired of watching real sports teams fail to perform? Sick of stupid endzone antics and miffed passes? Show them how to do it with some sweet football action. Call your plays, control your players, and crush your opponents: FTW!",
+  "developer": "glowmonkey",
+  "category": "Tycoon",
+  "tags": [],
+  "controls": "Mouse to select plays; spacebar to snap the ball; arrow keys to run; ASD to pass; W for a speed boost",
+  "thumbnailUrl": "/games/assets/4th_and_goal_2013/thumbnail.png",
+  "previewUrl": "/games/assets/4th_and_goal_2013/thumbnail.png",
+  "previewVideoUrl": "/games/assets/4th_and_goal_2013/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jan 31, 2013",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/4thandgoal2013.swf"
+}

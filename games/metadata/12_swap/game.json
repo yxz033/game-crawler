@@ -1,0 +1,22 @@
+{
+  "id": "12_swap",
+  "title": "12 Swap",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/12swap_0.swf",
+  "description": "",
+  "developer": "Addicting Games",
+  "category": "Puzzle",
+  "tags": [],
+  "controls": "Click adjacent smiley faces to swap positions. Test.",
+  "thumbnailUrl": "/games/assets/12_swap/thumbnail.jpg",
+  "previewUrl": "/games/assets/12_swap/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/12_swap/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Feb 1, 2005",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/12swap_0.swf"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "a_day_at_high_school",
+  "title": "A Day at High School",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/adayathighschool.swf",
+  "description": "A Day at High School is a free escape room game. Oh, like going to school wasn't hard enough. Now you're going to make me play through the day? Fortunately, there's a payoff that's better than homework...",
+  "developer": "Games2win",
+  "category": "Escape",
+  "tags": [],
+  "controls": "Mouse your way through the day",
+  "thumbnailUrl": "/games/assets/a_day_at_high_school/thumbnail.jpg",
+  "previewUrl": "/games/assets/a_day_at_high_school/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/a_day_at_high_school/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Aug 28, 2009",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/adayathighschool.swf"
+}

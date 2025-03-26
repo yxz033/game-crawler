@@ -1,0 +1,22 @@
+{
+  "id": "5x_man",
+  "title": "5X Man",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/5xman_0.swf",
+  "description": "Your five man squad has to make it out of this place, while collecting the gold. Dispatch one man at a time, holding switches to keep the team going forward!",
+  "developer": "Gibton",
+  "category": "Brain Teasers & Quizzes",
+  "tags": [],
+  "controls": "arrow keys to move; spacebar to take turns",
+  "thumbnailUrl": "/games/assets/5x_man/thumbnail.jpg",
+  "previewUrl": "/games/assets/5x_man/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/5x_man/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 1, 2010",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/5xman_0.swf"
+}

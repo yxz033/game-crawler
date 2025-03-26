@@ -1,0 +1,22 @@
+{
+  "id": "7_summits",
+  "title": "7 Summits",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/7-summits.swf",
+  "description": "You're an elite mountaineer taking part in a great competition: climbing the highest peak on each continent in as few days as possible. You've got four climbers to choose from, each with their own advantages and disadvantages. Seven great mountains and three mini-games await you!",
+  "developer": "Hoplite Games",
+  "category": "Adventure",
+  "tags": [],
+  "controls": "",
+  "thumbnailUrl": "/games/assets/7_summits/thumbnail.png",
+  "previewUrl": "/games/assets/7_summits/thumbnail.png",
+  "previewVideoUrl": "/games/assets/7_summits/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "May 18, 2017",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/7-summits.swf"
+}

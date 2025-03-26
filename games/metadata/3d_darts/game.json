@@ -1,0 +1,22 @@
+{
+  "id": "3d_darts",
+  "title": "3D Darts",
+  "url": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/3d-darts-ms/index.html",
+  "description": "3D Darts is a darts game with 3D animation and two-player capabilities. Enter into this fictional bar and enjoy one of our favorite casual games with 3D Darts. This is an easy game that you can play by yourself or with your friends. You have the option to play from 101, 301, and 501 with the option to play with 3 different kinds of AI players. Sick of playing against computers? No worries! If you’re in the mood to socialize, invite your friend over, and choose the two-player option to compete in the comfort of your own room. Be the first to reach 0 in this relaxing action game that you can play with your friends.",
+  "developer": "Famobi",
+  "category": "Instant",
+  "tags": [],
+  "controls": "To play this action game, use your mouse or finger to flick the dart onto the board. This online game follows the basic rules of darts: the object is for one player or a team to be the first to reach zero from their starting number. After three darts are thrown, the throwing player subtracts the total scored from his current total until he reaches zero. Pay attention to the numbers on the darts as the higher ones will get you closer to your goal.",
+  "thumbnailUrl": "/games/assets/3d_darts/thumbnail.jpg",
+  "previewUrl": "/games/assets/3d_darts/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/3d_darts/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 11, 2019",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/3d-darts-ms/index.html"
+}

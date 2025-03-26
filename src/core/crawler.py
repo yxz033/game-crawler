@@ -155,6 +155,7 @@ class GameCrawler:
         self.max_retries = 3
         self.progress_file = "crawl_progress.json"
         self.stats = {"success": 0, "failed": 0}
+        self.game_cache = {}  # 游戏数据缓存
         self.setup_logging()
 
     def setup_selenium(self):
@@ -288,6 +289,15 @@ class GameCrawler:
                     if game["url"] and not game["url"].startswith("http"):
                         game["url"] = "https://www.addictinggames.com" + game["url"]
                     
+                    # 生成游戏ID
+                    game_id = self.sanitize_id(game["title"])
+                    
+                    # 检查游戏是否在缓存中
+                    if game_id in self.game_cache:
+                        self.logger.debug(f"使用缓存数据: {game['title']}")
+                        pbar.update(1)
+                        continue
+                    
                     # 检查是否已处理过该游戏
                     if game["url"] in progress["processed_games"]:
                         self.logger.debug(f"跳过已处理的游戏: {game['title']}")
@@ -302,6 +312,8 @@ class GameCrawler:
                         try:
                             game_info = self.crawl_game_detail(game["url"], game["title"])
                             if game_info:
+                                # 更新缓存
+                                self.game_cache[game_info["id"]] = game_info
                                 self.update_index([game_info])
                                 progress["last_game"] = game["url"]
                                 progress["processed_games"].append(game["url"])
@@ -330,12 +342,30 @@ class GameCrawler:
             pbar.close()
             print(f"\n=== 爬虫运行完成 ===")
             print(f"成功: {self.stats['success']} | 失败: {self.stats['failed']}")
+            print(f"缓存游戏数量: {len(self.game_cache)}")
             
         except Exception as e:
             self.logger.error(f"爬取过程中出现错误: {str(e)}")
         finally:
             if hasattr(self, 'driver'):
                 self.driver.quit()
+
+    def sanitize_id(self, text: str) -> str:
+        """生成安全的ID，去除特殊字符"""
+        # 将标题转换为小写并替换空格为下划线
+        id_text = text.lower().replace(" ", "_")
+        
+        # 移除所有不适合作为文件夹名的字符
+        import re
+        id_text = re.sub(r'[^\w\-]', '_', id_text)
+        
+        # 确保没有连续的下划线
+        id_text = re.sub(r'_+', '_', id_text)
+        
+        # 去除首尾的下划线
+        id_text = id_text.strip('_')
+        
+        return id_text
 
     def get_video_url(self, game_data=None, soup=None):
         """获取视频URL"""
@@ -374,6 +404,12 @@ class GameCrawler:
         self.logger.debug(f"开始爬取游戏详情: {game_title}")
         
         try:
+            # 先检查缓存中是否已存在该游戏
+            game_id = self.sanitize_id(game_title)
+            if game_id in self.game_cache:
+                self.logger.info(f"使用缓存中的游戏数据: {game_title}")
+                return self.game_cache[game_id]
+            
             # 访问游戏详情页
             self.logger.debug(f"访问URL: {game_url}")
             self.driver.get(game_url)
@@ -390,7 +426,7 @@ class GameCrawler:
             soup = BeautifulSoup(page_source, 'html.parser')
             
             # 创建游戏专属目录
-            game_id = game_title.replace(" ", "_").lower()
+            game_id = self.sanitize_id(game_title)
             metadata_dir = os.path.join("games/metadata", game_id)
             assets_dir = os.path.join("games/assets", game_id)
             os.makedirs(metadata_dir, exist_ok=True)
@@ -505,7 +541,13 @@ class GameCrawler:
                     info["previewVideoUrl"] = f"/games/assets/{game_id}/{os.path.basename(saved_path)}"
             
             # 保存游戏信息
-            with open(os.path.join(metadata_dir, "info.json"), "w", encoding="utf-8") as f:
+            info_path = os.path.join(metadata_dir, "info.json")
+            with open(info_path, "w", encoding="utf-8") as f:
+                json.dump(info, f, ensure_ascii=False, indent=2)
+
+            # 保存游戏数据到game.json以方便缓存
+            game_path = os.path.join(metadata_dir, "game.json")
+            with open(game_path, "w", encoding="utf-8") as f:
                 json.dump(info, f, ensure_ascii=False, indent=2)
             
             # 获取统计数据
@@ -568,22 +610,71 @@ class GameCrawler:
             return None
         
     def load_progress(self):
-        """加载爬取进度"""
+        """加载爬取进度和已下载的游戏数据"""
+        progress = {"last_game": None, "processed_games": []}
+        
+        # 加载进度文件
         if os.path.exists(self.progress_file):
             try:
-                with open(self.progress_file, 'r') as f:
-                    return json.load(f)
+                with open(self.progress_file, 'r', encoding='utf-8') as f:
+                    progress = json.load(f)
             except Exception as e:
-                print(f"加载进度文件失败: {str(e)}")
-        return {"last_game": None, "processed_games": []}
+                self.logger.error(f"加载进度文件失败: {str(e)}")
+        
+        # 加载已下载的游戏数据到缓存
+        metadata_dir = "games/metadata"
+        if os.path.exists(metadata_dir):
+            for game_dir in os.listdir(metadata_dir):
+                if game_dir == 'index.json':
+                    continue
+                    
+                # 优先读取game.json，如果不存在则读取info.json
+                game_json = os.path.join(metadata_dir, game_dir, "game.json")
+                info_json = os.path.join(metadata_dir, game_dir, "info.json")
+                
+                json_file = game_json if os.path.exists(game_json) else info_json
+                
+                if os.path.exists(json_file):
+                    try:
+                        with open(json_file, 'r', encoding='utf-8') as f:
+                            game_data = json.load(f)
+                            # 确保游戏ID是安全的
+                            game_id = self.sanitize_id(game_data.get("title", game_dir))
+                            game_data["id"] = game_id
+                            
+                            # 保存到缓存
+                            self.game_cache[game_id] = game_data
+                            
+                            # 如果游戏URL不在进度中，添加到进度
+                            game_url = game_data.get("url", "")
+                            if game_url and game_url not in progress["processed_games"]:
+                                progress["processed_games"].append(game_url)
+                                
+                            # 如果是从info.json加载的，创建game.json以便后续使用
+                            if json_file == info_json and not os.path.exists(game_json):
+                                with open(game_json, 'w', encoding='utf-8') as gf:
+                                    json.dump(game_data, gf, ensure_ascii=False, indent=2)
+                                    
+                    except Exception as e:
+                        self.logger.error(f"加载游戏数据失败 {game_dir}: {str(e)}")
+        
+        self.logger.info(f"已加载 {len(self.game_cache)} 个游戏数据到缓存")
+        return progress
 
     def save_progress(self, progress):
         """保存爬取进度"""
         try:
-            with open(self.progress_file, 'w') as f:
-                json.dump(progress, f)
+            # 添加缓存统计信息到进度数据
+            progress["cache_stats"] = {
+                "total_games": len(self.game_cache),
+                "last_updated": time.strftime("%Y-%m-%d %H:%M:%S")
+            }
+            
+            with open(self.progress_file, 'w', encoding='utf-8') as f:
+                json.dump(progress, f, ensure_ascii=False, indent=2)
+            self.logger.debug(f"已保存进度和缓存统计信息，当前缓存游戏数：{len(self.game_cache)}")
         except Exception as e:
-            print(f"保存进度失败: {str(e)}")
+            self.logger.error(f"保存进度失败: {str(e)}")
 
     def scroll_to_load_all_games(self):
         """滚动页面加载所有游戏"""

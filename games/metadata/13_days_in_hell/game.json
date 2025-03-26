@@ -1,0 +1,22 @@
+{
+  "id": "13_days_in_hell",
+  "title": "13 Days In Hell",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/13daysinhell.swf",
+  "description": "13 Days In Hell is a free zombie tower defense game. What's worse than zombies walking the earth? Do a tour of duty in the underworld, brother. These creeps are RAW.",
+  "developer": "BubbleBox.com",
+  "category": "Shooter",
+  "tags": [],
+  "controls": "Mouseclick to aim and fire  Spacebar to reload  number keys to switch weapons",
+  "thumbnailUrl": "/games/assets/13_days_in_hell/thumbnail.jpg",
+  "previewUrl": "/games/assets/13_days_in_hell/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/13_days_in_hell/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Dec 13, 2007",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/13daysinhell.swf"
+}

@@ -549,13 +549,85 @@
       "plays": 0,
       "thumbnailUrl": "/games/assets/60_seconds_burger_run/thumbnail.jpg",
       "added": "Sep 21, 2012"
+    },
+    {
+      "id": "7_summits",
+      "title": "7 Summits",
+      "category": "Adventure",
+      "rating": 3.0,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/7_summits/thumbnail.png",
+      "added": "May 18, 2017"
+    },
+    {
+      "id": "3_pandas_2_night",
+      "title": "3 Pandas 2: Night",
+      "category": "Random",
+      "rating": 3.0,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3_pandas_2_night/thumbnail.jpg",
+      "added": "Mar 4, 2016"
+    },
+    {
+      "id": "7x7_ultimate",
+      "title": "7x7 Ultimate",
+      "category": "Instant",
+      "rating": 3.6,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/7x7_ultimate/thumbnail.jpg",
+      "added": "Sep 20, 2019"
+    },
+    {
+      "id": "8_ball_billiards_classic",
+      "title": "8 Ball Billiards Classic",
+      "category": "Instant",
+      "rating": 4.6,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/8_ball_billiards_classic/thumbnail.jpg",
+      "added": "Oct 25, 2019"
+    },
+    {
+      "id": "99_bricks",
+      "title": "99 Bricks",
+      "category": "Brain Teasers & Quizzes",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/99_bricks/thumbnail.png",
+      "added": "Mar 23, 2009"
+    },
+    {
+      "id": "a_crow_in_hell",
+      "title": "A Crow in Hell",
+      "category": "Scary",
+      "rating": 2.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a_crow_in_hell/thumbnail.jpg",
+      "added": "Nov 7, 2008"
+    },
+    {
+      "id": "a_day_at_high_school",
+      "title": "A Day at High School",
+      "category": "Escape",
+      "rating": 2.5,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a_day_at_high_school/thumbnail.jpg",
+      "added": "Aug 28, 2009"
+    },
+    {
+      "id": "a_day_in_the_museum",
+      "title": "A Day In The Museum",
+      "category": "Mobile",
+      "rating": 4.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a_day_in_the_museum/thumbnail.jpg",
+      "added": "Aug 7, 2020"
     }
   ],
   "categories": [
     {
       "id": "brain_teasers_&_quizzes",
       "name": "Brain Teasers & Quizzes",
-      "count": 7
+      "count": 8
     },
     {
       "id": "shooting",
@@ -570,7 +642,7 @@
     {
       "id": "instant",
       "name": "Instant",
-      "count": 7
+      "count": 9
     },
     {
       "id": "obstacle",
@@ -595,7 +667,7 @@
     {
       "id": "mobile",
       "name": "Mobile",
-      "count": 4
+      "count": 5
     },
     {
       "id": "puzzle",
@@ -650,7 +722,7 @@
     {
       "id": "random",
       "name": "Random",
-      "count": 3
+      "count": 4
     },
     {
       "id": "classic",
@@ -660,7 +732,7 @@
     {
       "id": "escape",
       "name": "Escape",
-      "count": 1
+      "count": 2
     },
     {
       "id": "tycoon",
@@ -670,6 +742,16 @@
     {
       "id": "first_person",
       "name": "First Person",
+      "count": 1
+    },
+    {
+      "id": "adventure",
+      "name": "Adventure",
+      "count": 1
+    },
+    {
+      "id": "scary",
+      "name": "Scary",
       "count": 1
     }
   ]

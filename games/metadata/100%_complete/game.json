@@ -1,0 +1,21 @@
+{
+  "id": "100_complete",
+  "title": "100% Complete",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/100percentcomplete_0.swf",
+  "description": "100% Complete is a free platformer game. Where is that cheeseburger? You will need the propeller beanie hat to find it. Not all walls are solid, and not all falls mean disaster. Find the goggles to see the doors! Keep exploring your weird world. There are no traps, only hidden doors!",
+  "developer": "Nolan Labs",
+  "category": "Obstacle",
+  "tags": [],
+  "controls": "Arrow keys to move. R to return home.",
+  "thumbnailUrl": "/games/assets/100%_complete/thumbnail.jpg",
+  "previewUrl": "/games/assets/100%_complete/thumbnail.jpg",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Sep 27, 2012",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/100percentcomplete_0.swf"
+}

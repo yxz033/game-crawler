@@ -1,0 +1,22 @@
+{
+  "id": "8_ball_billiards_classic",
+  "title": "8 Ball Billiards Classic",
+  "url": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/8-ball-billiards-classic/index.html",
+  "description": "8 Ball Billiards Classic is the online version of your favorite pool game. This mobile-friendly game has the same simple green and brown design as any pool table that you’d find in bar. The rules are the same: use your pool stick to hit the white ball to hit either the striped or solid colored balls into the pocket holes. Avoid hitting the white ball or the balls of your opponent into the pocket hole. You have the option to play against the A.I. or, if you have a friend over, play in two-player mode. You have a top-view of the game with options to see hints for the best angles. This is the perfect casual and calming game that you can play with your friends or by yourself. Once you’ve finished a game, head over to the leaderboard to see if you made the cut.",
+  "developer": "Famobi",
+  "category": "Instant",
+  "tags": [],
+  "controls": "To play this classic sports game, use your mouse or finger to aim the pool stick. Pull back on the pool stick to choose the strength of the hit, and then let it go to hit the white ball. Click on the menu to restart, go home or adjust your sound settings. On the home screen, you’ll find the leaderboards to see how well you rank against other pool players.",
+  "thumbnailUrl": "/games/assets/8_ball_billiards_classic/thumbnail.jpg",
+  "previewUrl": "/games/assets/8_ball_billiards_classic/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/8_ball_billiards_classic/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 25, 2019",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/8-ball-billiards-classic/index.html"
+}

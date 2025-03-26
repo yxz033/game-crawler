@@ -1,0 +1,22 @@
+{
+  "id": "99_bricks",
+  "title": "99 Bricks",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/99bricks.swf",
+  "description": "Jenga and Tetris unite, finally! Stack those 99 bricks to build a massive tower.",
+  "developer": "",
+  "category": "Brain Teasers & Quizzes",
+  "tags": [],
+  "controls": "Arrow keys to rotate and drop.",
+  "thumbnailUrl": "/games/assets/99_bricks/thumbnail.png",
+  "previewUrl": "/games/assets/99_bricks/thumbnail.png",
+  "previewVideoUrl": "/games/assets/99_bricks/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Mar 23, 2009",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/99bricks.swf"
+}

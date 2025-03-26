@@ -1,0 +1,22 @@
+{
+  "id": "360_snake",
+  "title": "360 Snake",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/360snake_0.swf",
+  "description": "360 Snake is a free puzzle game. The snake is unleashed!",
+  "developer": "JB",
+  "category": "Avoider",
+  "tags": [],
+  "controls": "Arrow keys to move  Eat food; avoid walls",
+  "thumbnailUrl": "/games/assets/360_snake/thumbnail.jpg",
+  "previewUrl": "/games/assets/360_snake/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/360_snake/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jul 6, 2006",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/360snake_0.swf"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "2013_us_open",
+  "title": "2013 US Open",
+  "url": "http://www.wgt.com/affiliate.aspx?utm_source=mtvn&utm_medium=framed&utm_campaign=usopen2013&forward=http://www.wgt.com/play/tourney/?t=25454de7-3168-4796-92d0-a1b201765ad9",
+  "description": "Free online golf game. Play a quick closest-to-the-hole challenge on the Merion Golf Club's East Course, home of the 2013 US Open.",
+  "developer": "World Golf Tour",
+  "category": "Sports",
+  "tags": [],
+  "controls": "see in-game instructions",
+  "thumbnailUrl": "/games/assets/2013_us_open/thumbnail.jpg",
+  "previewUrl": "/games/assets/2013_us_open/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/2013_us_open/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jun 12, 2013",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "http://www.wgt.com/affiliate.aspx?utm_source=mtvn&utm_medium=framed&utm_campaign=usopen2013&forward=http://www.wgt.com/play/tourney/?t=25454de7-3168-4796-92d0-a1b201765ad9"
+}

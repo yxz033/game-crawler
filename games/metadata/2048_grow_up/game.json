@@ -1,0 +1,22 @@
+{
+  "id": "2048_grow_up",
+  "title": "2048 Grow up",
+  "url": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/2048-growup/index.html",
+  "description": "2048 Grow Up is a casual online game based on the joys of raising a baby. The objective of the game is to slide the tiles with other matching tiles until you hit your goal. Once the two matching tiles merge, you will end up with a new tile, of an evolved child, and you continue up until your little pride of joy is all grown up. This online sliding tile game has 6 levels for you to solve. Each level has different growth goals which you can view in the righthand tab. You’ll also see your level, score, and options in the same section. Once you’ve solved all 6 levels, head over to the High Scores to see how you rank against other puzzle players.",
+  "developer": "Neon Games",
+  "category": "Mobile",
+  "tags": [],
+  "controls": "To play this puzzle game, use your finger, the controls on the screen, or your mouse to push together two matching blocks. Your goal is to evolve your baby up to an adult without getting stuck with too many unmatching blocks that can’t slide. Use the righthand tab to view your progress, pause, or access your sound options. Go back to the menu to click High Scores and see which score you have to beat!",
+  "thumbnailUrl": "/games/assets/2048_grow_up/thumbnail.jpg",
+  "previewUrl": "/games/assets/2048_grow_up/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/2048_grow_up/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 4, 2019",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/2048-growup/index.html"
+}

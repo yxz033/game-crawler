@@ -1,0 +1,22 @@
+{
+  "id": "501_darts",
+  "title": "501 Darts",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/501darts.swf",
+  "description": "501 Darts is a free sports game. Are you the dart master, or do you risk people's lives with every throw? Get 501 points exactly to win. How many turns do you need?",
+  "developer": "UltimateArcade.com",
+  "category": "First Person",
+  "tags": [],
+  "controls": "See game for instructions",
+  "thumbnailUrl": "/games/assets/501_darts/thumbnail.jpg",
+  "previewUrl": "/games/assets/501_darts/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/501_darts/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jun 10, 2005",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/501darts.swf"
+}

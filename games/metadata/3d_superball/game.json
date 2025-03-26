@@ -1,0 +1,22 @@
+{
+  "id": "3d_superball",
+  "title": "3D Superball",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/3dsuperball.swf",
+  "description": "",
+  "developer": "CrazyMonkeyGames.com",
+  "category": "Sports",
+  "tags": [],
+  "controls": "Kick the ball. Keep kicking it!",
+  "thumbnailUrl": "/games/assets/3d_superball/thumbnail.jpg",
+  "previewUrl": "/games/assets/3d_superball/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/3d_superball/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Mar 15, 2006",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/3dsuperball.swf"
+}
