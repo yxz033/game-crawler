@@ -1,0 +1,21 @@
+{
+  "id": "100_arrows",
+  "title": "100 Arrows",
+  "url": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/100-arrows/index.html",
+  "description": "100 Arrows is an online archery game that prepares you for a big tournament.  Archery practice always comes in handy to make you into a worthy opponent. Before participating in the tournament, finish 30 levels of practice. Don’t worry, this isn’t a boring tutorial. This is to get you sharp and ready. 100 Arrows is a fun shooter game with medieval animation and puzzle-like obstacles. You may need to shoot moving targets, shoot long distances, or shoot through intricate designs to get to other targets. Once you get through all 30 levels, you’ll be ready for the tournament where you’ll be up against the best of the best. Don’t skip out practice, and play this online archery game.",
+  "developer": "CircusMoth",
+  "category": "HTML5",
+  "tags": [],
+  "controls": "To play 100 Arrows, click anywhere and stretch your arrow back then let go to shoot. Pay attention to the dots to see the angle of your arrow and the strength to each shot. As a tip, it’s best not click to close to the edge of the game so you have plenty of space to angle and stretch your arrow. You’ll get plenty of chances to pass each level but you’re still limited on arrows. Click on the menu to turn off sound/music or restart the online game.",
+  "thumbnailUrl": "/games/assets/100_arrows/thumbnail.jpg",
+  "previewUrl": "/games/assets/100_arrows/thumbnail.jpg",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Dec 4, 2014",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/100-arrows/index.html"
+}

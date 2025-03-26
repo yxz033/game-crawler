@@ -1,0 +1,22 @@
+{
+  "id": "2048_legend",
+  "title": "2048 Legend",
+  "url": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/2048-legend/index.html",
+  "description": "2048 Legend is a merging puzzle game. If you have never played a 2048 game before, then this is a great classic version of the game for you to try out. There are 3 modes for this online game: 4x4, 6x6, and 8x8. Choose the best one depending on what kind of challenge you are looking for. If you are a newbie, the objective is simple: merge numbers together to create the biggest number possible. Random 2s and 4s will be added to the game every time you make a combination. Sometimes numbers can get in your way of merging! Look at the board and think carefully before you slide a number over. It will slide all the way to the end so it may not hit the number you need it to. Even if you don’t get the largest number possible, the game ends once you fill-up the entire grid. Play again to beat your best score and to climb up the leaderboards.",
+  "developer": "Inlogic",
+  "category": "Instant",
+  "tags": [],
+  "controls": "To play this puzzle game, merge together 2 matching numbers to have them combine and add up. If you slide a number, it will slide all the way to the end of the direction you shifted it to. If you get stuck, you use the option in the lower right corner to restart or undo the last move.",
+  "thumbnailUrl": "/games/assets/2048_legend/thumbnail.jpg",
+  "previewUrl": "/games/assets/2048_legend/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/2048_legend/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "May 28, 2021",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/2048-legend/index.html"
+}

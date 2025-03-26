@@ -1,0 +1,22 @@
+{
+  "id": "3_pandas",
+  "title": "3 Pandas",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/3-pandas.swf",
+  "description": "These three pandas have been captured by pirates! Help them escape the pirate ship, get through the jungles on the island and past the hostile tribal people.",
+  "developer": "Point Publishing",
+  "category": "Cute",
+  "tags": [],
+  "controls": "Control the pandas with your mouse and use their unique abilities to guide them along their adventure. Click on a panda to display his ability, and then click on the ability to perform the action.",
+  "thumbnailUrl": "/games/assets/3_pandas/thumbnail.jpg",
+  "previewUrl": "/games/assets/3_pandas/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/3_pandas/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Feb 10, 2016",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/3-pandas.swf"
+}

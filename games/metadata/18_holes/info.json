@@ -1,0 +1,22 @@
+{
+  "id": "18_holes",
+  "title": "18 Holes",
+  "url": "https://cdn.mathgames.com/content/18holes/index.html",
+  "description": "18 Holes is a cute golfing game that is also a good way to practice math! Split up practicing your math games with this cute shooter game. This is a platform game that requires you to get the ball in the hole but also to grab the stars along the way. The more stars you get, the better your score. There are obstacles in the way preventing you from getting all 3 stars so think strategically. You are also limited in the number of hits you can do per level. In between each level, you will have time to practice your math skills by answering 5 correctly before you can play again. This way you break up your studying time without burning yourself out.",
+  "developer": "Math Games",
+  "category": "Educational",
+  "tags": [],
+  "controls": "To play this math game, click on the grade, and then click on the skill you would like to study. To be able to play the next level in this online game, you must answer 5 math problems correctly. To play the golfing section of this game, click, hold, and angle your directional line. The further back you go, the stronger the golf ball will be hit. Use the green dots to guide your ball’s angle and strength. Each game requires a specific number of hits before you lose the level.",
+  "thumbnailUrl": "/games/assets/18_holes/thumbnail.jpg",
+  "previewUrl": "/games/assets/18_holes/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/18_holes/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jan 15, 2021",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn.mathgames.com/content/18holes/index.html"
+}

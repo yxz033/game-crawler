@@ -1,0 +1,22 @@
+{
+  "id": "2048_city",
+  "title": "2048 City",
+  "url": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/2048-city/index.html",
+  "description": "The year is 2048 and cities are no longer designed by city planners, engineers, or architects. Instead, all cities are made by matching tiles in an online game, a game called: City 2048. In 2048 City, a variety of random tiles will appear before you in the games playing box. Your job is to match these tiles by strategically repositioning the box so that when the tiles move they slide into a matching tile. You can only make the various tiles disappear by ensuring they slam into a tile of the same type. If you do not the box will begin to become full of these errant, random tiles. The problem with these errant, random tiles is that you can only have so many of them. Eventually, the tiles will pile up and take over the screen. When the tiles have piled up and taken over the screen, you will lose your ability to control the flow of the tiles. The game will be over and the tiles will have won. Do you want the tiles to win? I mean, probably not. So, please. Ensure that you endeavor to keep the tiles from piling up. Grow your score. Win. Show them. Show them all.",
+  "developer": "Neon Games",
+  "category": "Instant",
+  "tags": [],
+  "controls": "Use your mouse to click the up, down, left and right arrows on the left side of the screen. This will control which way the tiles move. \r\nYou can also control this action by using your arrow pad.",
+  "thumbnailUrl": "/games/assets/2048_city/thumbnail.jpg",
+  "previewUrl": "/games/assets/2048_city/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/2048_city/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "May 16, 2019",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/2048-city/index.html"
+}

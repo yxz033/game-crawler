@@ -1,0 +1,22 @@
+{
+  "id": "4_second_frenzy",
+  "title": "4 Second Frenzy",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/4secondfrenzy.swf",
+  "description": "4 Second Frenzy is a free action game. What can you do in four seconds? We don't want to know. But can you defuse a bomb, do math and leap over buildings in time?",
+  "developer": "ArmorGames",
+  "category": "Random",
+  "tags": [],
+  "controls": "use arrow keys and space bar.",
+  "thumbnailUrl": "/games/assets/4_second_frenzy/thumbnail.png",
+  "previewUrl": "/games/assets/4_second_frenzy/thumbnail.png",
+  "previewVideoUrl": "/games/assets/4_second_frenzy/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jul 27, 2006",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/4secondfrenzy.swf"
+}

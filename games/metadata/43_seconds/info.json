@@ -1,0 +1,22 @@
+{
+  "id": "43_seconds",
+  "title": "43 Seconds",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/43seconds_0.swf",
+  "description": "",
+  "developer": "MyGames.to",
+  "category": "Random",
+  "tags": [],
+  "controls": "Mouseclick the numbers in order.",
+  "thumbnailUrl": "/games/assets/43_seconds/thumbnail.jpg",
+  "previewUrl": "/games/assets/43_seconds/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/43_seconds/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jun 14, 2007",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/43seconds_0.swf"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "3d_space_skimmer",
+  "title": "3D Space Skimmer",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/3dspaceskimmer.swf",
+  "description": "",
+  "developer": "GodFart.com",
+  "category": "Hard",
+  "tags": [],
+  "controls": "MOUSE to move.",
+  "thumbnailUrl": "/games/assets/3d_space_skimmer/thumbnail.jpg",
+  "previewUrl": "/games/assets/3d_space_skimmer/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/3d_space_skimmer/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Dec 9, 2004",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/3dspaceskimmer.swf"
+}

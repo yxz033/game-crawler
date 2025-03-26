@@ -1,0 +1,21 @@
+{
+  "id": "1000_blocks",
+  "title": "1000 Blocks",
+  "url": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/1000-blocks/index.html",
+  "description": "1000 Blocks is the ultimate shape based puzzle game. You may think you know what 1000 Blocks is all about but you don't. There are many Tetris style puzzle games available in the world but this one is different. In 1000 Blocks you will be given shapes one by one and will not have the ability to rotate, choose, or skip any. At first, blush this aspect of the game may make it seem unfair or impossible to beat. But really, it just makes it a more challenging puzzle. You'll be forced to use the space available and the shapes given to you in order to build a complete line and then blast it away. Another aspect of 1000 Blocks is that the lines you need to construct in order to clear aa row don't just have to go horizontally. In fact, you can build your rows from left to right in order to gain points or construct them as vertical columns. This means you'll have to start thinking in multiple dimensions at once. It's not just about the horizon anymore. If you want to score, and score big you'll have to think vertically, horizontally, and two steps ahead.",
+  "developer": "Famobi",
+  "category": "Instant",
+  "tags": [],
+  "controls": "Select shapes from the left side of the screen and then place them on the gridded playing area. You'll have to build a row or column that goes all the way from one side to the next in order to score.",
+  "thumbnailUrl": "/games/assets/1000_blocks/thumbnail.jpg",
+  "previewUrl": "/games/assets/1000_blocks/thumbnail.jpg",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 11, 2019",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/1000-blocks/index.html"
+}

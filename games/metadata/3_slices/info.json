@@ -1,0 +1,22 @@
+{
+  "id": "3_slices",
+  "title": "3 Slices",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/3slices.swf",
+  "description": "",
+  "developer": "Gaz Thomas",
+  "category": "Puzzle",
+  "tags": [],
+  "controls": "mouse to slice",
+  "thumbnailUrl": "/games/assets/3_slices/thumbnail.png",
+  "previewUrl": "/games/assets/3_slices/thumbnail.png",
+  "previewVideoUrl": "/games/assets/3_slices/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Apr 6, 2012",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/3slices.swf"
+}

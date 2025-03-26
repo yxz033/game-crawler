@@ -1,0 +1,22 @@
+{
+  "id": "3d_field_goal_games",
+  "title": "3D Field Goal Games",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/3dfieldgoalgames.swf",
+  "description": "",
+  "developer": "Jason Hansen",
+  "category": "Sports",
+  "tags": [],
+  "controls": "Point your kick, select your power and accuracy, and let that pigskin fly.",
+  "thumbnailUrl": "/games/assets/3d_field_goal_games/thumbnail.png",
+  "previewUrl": "/games/assets/3d_field_goal_games/thumbnail.png",
+  "previewVideoUrl": "/games/assets/3d_field_goal_games/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Apr 5, 2006",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/3dfieldgoalgames.swf"
+}

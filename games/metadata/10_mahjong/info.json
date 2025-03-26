@@ -7,8 +7,9 @@
   "category": "Brain Teasers & Quizzes",
   "tags": [],
   "controls": "To play this online puzzle game, click on 2 of the same tiles that will add up to 10. Each tile must be open which means at least one side must be free and it cannot be covered by another tile. In the righthand corner, you will see your score, level, and the timer. You’ll also see the options for hint and shuffle.",
-  "thumbnailUrl": "/games/assets/10_mahjong/thumbnail.webp",
-  "previewUrl": "/games/assets/10_mahjong/preview.webp",
+  "thumbnailUrl": "/games/assets/10_mahjong/thumbnail.jpg",
+  "previewUrl": "/games/assets/10_mahjong/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/10_mahjong/preview.mp4",
   "screenshots": [],
   "features": [],
   "device": {

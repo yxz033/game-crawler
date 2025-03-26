@@ -7,6 +7,10 @@ def main():
     try:
         crawler = GameCrawler()
         crawler.crawl()
+    except KeyboardInterrupt:
+        print("\n用户中断爬虫运行")
+    except Exception as e:
+        print(f"\n爬虫运行出错: {str(e)}")
     finally:
         if hasattr(crawler, 'driver'):
             crawler.driver.quit()

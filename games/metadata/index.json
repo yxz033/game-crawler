@@ -7,14 +7,669 @@
       "category": "Brain Teasers & Quizzes",
       "rating": 4.2,
       "plays": 0,
-      "thumbnailUrl": "/games/assets/10_mahjong/thumbnail.webp",
+      "thumbnailUrl": "/games/assets/10_mahjong/thumbnail.jpg",
       "added": "Jan 21, 2020"
+    },
+    {
+      "id": "10_more_bullets",
+      "title": "10 More Bullets",
+      "category": "Shooting",
+      "rating": 3.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/10_more_bullets/thumbnail.png",
+      "added": "Mar 12, 2014"
+    },
+    {
+      "id": "100_arrows",
+      "title": "100 Arrows",
+      "category": "HTML5",
+      "rating": 3.6,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/100_arrows/thumbnail.jpg",
+      "added": "Dec 4, 2014"
+    },
+    {
+      "id": "100_little_monsters",
+      "title": "100 Little Monsters",
+      "category": "Instant",
+      "rating": 3.7,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/100_little_monsters/thumbnail.png",
+      "added": "Jun 16, 2018"
+    },
+    {
+      "id": "100%_complete",
+      "title": "100% Complete",
+      "category": "Obstacle",
+      "rating": 3.5,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/100%_complete/thumbnail.jpg",
+      "added": "Sep 27, 2012"
+    },
+    {
+      "id": "1000_blocks",
+      "title": "1000 Blocks",
+      "category": "Instant",
+      "rating": 3.9,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/1000_blocks/thumbnail.jpg",
+      "added": "Oct 11, 2019"
+    },
+    {
+      "id": "1000_degree_heated_knife_game",
+      "title": "1000 Degree Heated Knife Game",
+      "category": "Bloody",
+      "rating": 3.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/1000_degree_heated_knife_game/thumbnail.png",
+      "added": "Dec 18, 2018"
+    },
+    {
+      "id": "1001_arabian_nights",
+      "title": "1001 Arabian Nights",
+      "category": "Clicker",
+      "rating": 3.7,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/1001_arabian_nights/thumbnail.jpg",
+      "added": "Jun 28, 2024"
+    },
+    {
+      "id": "1010_bricks",
+      "title": "1010 Bricks",
+      "category": "Easy",
+      "rating": 3.1,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/1010_bricks/thumbnail.jpg",
+      "added": "May 24, 2019"
+    },
+    {
+      "id": "1010_hex",
+      "title": "1010 Hex",
+      "category": "Mobile",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/1010_hex/thumbnail.jpg",
+      "added": "Jul 25, 2019"
+    },
+    {
+      "id": "10mahjong",
+      "title": "10Mahjong",
+      "category": "HTML5",
+      "rating": 3.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/10mahjong/thumbnail.jpg",
+      "added": "May 2, 2019"
+    },
+    {
+      "id": "12_holes_of_x-mas",
+      "title": "12 Holes of X-Mas",
+      "category": "Easy",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/12_holes_of_x-mas/thumbnail.jpg",
+      "added": "Jan 20, 2005"
+    },
+    {
+      "id": "12_swap",
+      "title": "12 Swap",
+      "category": "Puzzle",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/12_swap/thumbnail.jpg",
+      "added": "Feb 1, 2005"
+    },
+    {
+      "id": "13_days_in_hell",
+      "title": "13 Days In Hell",
+      "category": "Shooter",
+      "rating": 4.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/13_days_in_hell/thumbnail.jpg",
+      "added": "Dec 13, 2007"
+    },
+    {
+      "id": "18_holes",
+      "title": "18 Holes",
+      "category": "Educational",
+      "rating": 4.1,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/18_holes/thumbnail.jpg",
+      "added": "Jan 15, 2021"
+    },
+    {
+      "id": "2013_us_open",
+      "title": "2013 US Open",
+      "category": "Sports",
+      "rating": 3.1,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/2013_us_open/thumbnail.jpg",
+      "added": "Jun 12, 2013"
+    },
+    {
+      "id": "2048_city",
+      "title": "2048 City",
+      "category": "Instant",
+      "rating": 3.6,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/2048_city/thumbnail.jpg",
+      "added": "May 16, 2019"
+    },
+    {
+      "id": "2048_grow_up",
+      "title": "2048 Grow up",
+      "category": "Mobile",
+      "rating": 3.5,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/2048_grow_up/thumbnail.jpg",
+      "added": "Oct 4, 2019"
+    },
+    {
+      "id": "2048_legend",
+      "title": "2048 Legend",
+      "category": "Instant",
+      "rating": 4.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/2048_legend/thumbnail.jpg",
+      "added": "May 28, 2021"
+    },
+    {
+      "id": "2048_ufo",
+      "title": "2048 UFO",
+      "category": "Mobile",
+      "rating": 3.1,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/2048_ufo/thumbnail.jpg",
+      "added": "May 24, 2019"
+    },
+    {
+      "id": "2099",
+      "title": "2099",
+      "category": "Flying",
+      "rating": 3.0,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/2099/thumbnail.jpg",
+      "added": "Jul 13, 2010"
+    },
+    {
+      "id": "21_blackjack_master",
+      "title": "21 Blackjack Master",
+      "category": "Card",
+      "rating": 4.3,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/21_blackjack_master/thumbnail.jpg",
+      "added": "Mar 4, 2022"
+    },
+    {
+      "id": "24_carrots",
+      "title": "24 Carrots",
+      "category": "Brain Teasers & Quizzes",
+      "rating": 4.3,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/24_carrots/thumbnail.jpg",
+      "added": "Jul 17, 2021"
+    },
+    {
+      "id": "2d_knockout",
+      "title": "2D Knockout",
+      "category": "Fighting",
+      "rating": 2.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/2d_knockout/thumbnail.jpg",
+      "added": "Jan 17, 2005"
+    },
+    {
+      "id": "3_in_a_row",
+      "title": "3 In A Row",
+      "category": "Educational",
+      "rating": 4.3,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3_in_a_row/thumbnail.jpg",
+      "added": "Jul 9, 2021"
+    },
+    {
+      "id": "3_pandas",
+      "title": "3 Pandas",
+      "category": "Cute",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3_pandas/thumbnail.jpg",
+      "added": "Feb 10, 2016"
+    },
+    {
+      "id": "3_pyramid_tripeaks_2",
+      "title": "3 Pyramid Tripeaks 2",
+      "category": "Mobile",
+      "rating": 3.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3_pyramid_tripeaks_2/thumbnail.jpg",
+      "added": "Aug 28, 2020"
+    },
+    {
+      "id": "3_slices",
+      "title": "3 Slices",
+      "category": "Puzzle",
+      "rating": 3.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3_slices/thumbnail.png",
+      "added": "Apr 6, 2012"
+    },
+    {
+      "id": "3_slices_2",
+      "title": "3 Slices 2",
+      "category": "Hard",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3_slices_2/thumbnail.jpg",
+      "added": "Jun 22, 2012"
+    },
+    {
+      "id": "360_smash",
+      "title": "360 Smash",
+      "category": "Easy",
+      "rating": 3.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/360_smash/thumbnail.png",
+      "added": "Sep 15, 2014"
+    },
+    {
+      "id": "360_snake",
+      "title": "360 Snake",
+      "category": "Avoider",
+      "rating": 3.6,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/360_snake/thumbnail.jpg",
+      "added": "Jul 6, 2006"
+    },
+    {
+      "id": "3d_air_hockey",
+      "title": "3D Air Hockey",
+      "category": "Instant",
+      "rating": 4.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_air_hockey/thumbnail.jpg",
+      "added": "Sep 20, 2019"
+    },
+    {
+      "id": "3d_bowling",
+      "title": "3D Bowling",
+      "category": "Easy",
+      "rating": 4.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_bowling/thumbnail.jpg",
+      "added": "Feb 14, 2020"
+    },
+    {
+      "id": "3d_darts",
+      "title": "3D Darts",
+      "category": "Instant",
+      "rating": 3.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_darts/thumbnail.jpg",
+      "added": "Oct 11, 2019"
+    },
+    {
+      "id": "3d_desert_racer",
+      "title": "3D Desert Racer",
+      "category": "HTML5",
+      "rating": 4.0,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_desert_racer/thumbnail.jpg",
+      "added": "Jan 16, 2020"
+    },
+    {
+      "id": "3d_field_goal_games",
+      "title": "3D Field Goal Games",
+      "category": "Sports",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_field_goal_games/thumbnail.png",
+      "added": "Apr 5, 2006"
+    },
+    {
+      "id": "3d_free_kick",
+      "title": "3D Free Kick",
+      "category": "Instant",
+      "rating": 3.6,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_free_kick/thumbnail.jpg",
+      "added": "Sep 27, 2019"
+    },
+    {
+      "id": "3d_logic_2",
+      "title": "3D Logic 2",
+      "category": "Brain Teasers & Quizzes",
+      "rating": 3.6,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_logic_2/thumbnail.jpg",
+      "added": "Nov 15, 2007"
+    },
+    {
+      "id": "3d_shooter",
+      "title": "3D Shooter",
+      "category": "Shooter",
+      "rating": 3.9,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_shooter/thumbnail.png",
+      "added": "Oct 26, 2004"
+    },
+    {
+      "id": "3d_space_skimmer",
+      "title": "3D Space Skimmer",
+      "category": "Hard",
+      "rating": 3.0,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_space_skimmer/thumbnail.jpg",
+      "added": "Dec 9, 2004"
+    },
+    {
+      "id": "3d_superball",
+      "title": "3D Superball",
+      "category": "Sports",
+      "rating": 2.9,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3d_superball/thumbnail.jpg",
+      "added": "Mar 15, 2006"
+    },
+    {
+      "id": "3lind",
+      "title": "3LIND",
+      "category": "Hard",
+      "rating": 3.1,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/3lind/thumbnail.png",
+      "added": "Mar 1, 2010"
+    },
+    {
+      "id": "4_differences",
+      "title": "4 Differences",
+      "category": "Brain Teasers & Quizzes",
+      "rating": 3.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/4_differences/thumbnail.png",
+      "added": "Mar 12, 2010"
+    },
+    {
+      "id": "4_in_a_row_mania",
+      "title": "4 In a Row Mania",
+      "category": "Clicker",
+      "rating": 4.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/4_in_a_row_mania/thumbnail.jpg",
+      "added": "Mar 4, 2022"
+    },
+    {
+      "id": "4_second_frenzy",
+      "title": "4 Second Frenzy",
+      "category": "Random",
+      "rating": 4.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/4_second_frenzy/thumbnail.png",
+      "added": "Jul 27, 2006"
+    },
+    {
+      "id": "4_wheel_madness",
+      "title": "4 Wheel Madness",
+      "category": "Classic",
+      "rating": 3.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/4_wheel_madness/thumbnail.jpg",
+      "added": "Nov 30, 2006"
+    },
+    {
+      "id": "40xescape",
+      "title": "40xEscape",
+      "category": "Escape",
+      "rating": 3.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/40xescape/thumbnail.jpg",
+      "added": "Nov 2, 2012"
+    },
+    {
+      "id": "43_seconds",
+      "title": "43 Seconds",
+      "category": "Random",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/43_seconds/thumbnail.jpg",
+      "added": "Jun 14, 2007"
+    },
+    {
+      "id": "4th_and_goal_2011",
+      "title": "4th and Goal 2011",
+      "category": "Easy",
+      "rating": 3.9,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/4th_and_goal_2011/thumbnail.png",
+      "added": "Feb 1, 2011"
+    },
+    {
+      "id": "4th_and_goal_2012",
+      "title": "4th and Goal 2012",
+      "category": "Sports",
+      "rating": 3.7,
+      "plays": 0,
+      "thumbnailUrl": "",
+      "added": "Jan 30, 2012"
+    },
+    {
+      "id": "4th_and_goal_2013",
+      "title": "4th and Goal 2013",
+      "category": "Tycoon",
+      "rating": 3.6,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/4th_and_goal_2013/thumbnail.png",
+      "added": "Jan 31, 2013"
+    },
+    {
+      "id": "4th_and_goal_2014",
+      "title": "4th and Goal 2014",
+      "category": "Sports",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/4th_and_goal_2014/thumbnail.jpg",
+      "added": "Jan 28, 2014"
+    },
+    {
+      "id": "4th_and_goal_2015",
+      "title": "4th and Goal 2015",
+      "category": "Sports",
+      "rating": 3.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/4th_and_goal_2015/thumbnail.jpg",
+      "added": "Jan 31, 2015"
+    },
+    {
+      "id": "4th_and_goal_2016",
+      "title": "4th and Goal 2016",
+      "category": "Easy",
+      "rating": 3.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/4th_and_goal_2016/thumbnail.jpg",
+      "added": "Feb 12, 2016"
+    },
+    {
+      "id": "50_state_capitals",
+      "title": "50 State Capitals",
+      "category": "Brain Teasers & Quizzes",
+      "rating": 2.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/50_state_capitals/thumbnail.jpg",
+      "added": "Dec 28, 2006"
+    },
+    {
+      "id": "50_states",
+      "title": "50 States",
+      "category": "Classic",
+      "rating": 3.9,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/50_states/thumbnail.png",
+      "added": "Jan 3, 2007"
+    },
+    {
+      "id": "50_states_v2",
+      "title": "50 States v2",
+      "category": "Brain Teasers & Quizzes",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/50_states_v2/thumbnail.jpg",
+      "added": "Jun 14, 2007"
+    },
+    {
+      "id": "501_darts",
+      "title": "501 Darts",
+      "category": "First Person",
+      "rating": 2.7,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/501_darts/thumbnail.jpg",
+      "added": "Jun 10, 2005"
+    },
+    {
+      "id": "5x_man",
+      "title": "5X Man",
+      "category": "Brain Teasers & Quizzes",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/5x_man/thumbnail.jpg",
+      "added": "Oct 1, 2010"
+    },
+    {
+      "id": "6_differences",
+      "title": "6 Differences",
+      "category": "Easy",
+      "rating": 3.6,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/6_differences/thumbnail.jpg",
+      "added": "May 22, 2008"
+    },
+    {
+      "id": "60_seconds_burger_run",
+      "title": "60 Seconds Burger Run",
+      "category": "Random",
+      "rating": 3.8,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/60_seconds_burger_run/thumbnail.jpg",
+      "added": "Sep 21, 2012"
     }
   ],
   "categories": [
     {
       "id": "brain_teasers_&_quizzes",
       "name": "Brain Teasers & Quizzes",
+      "count": 7
+    },
+    {
+      "id": "shooting",
+      "name": "Shooting",
+      "count": 1
+    },
+    {
+      "id": "html5",
+      "name": "HTML5",
+      "count": 3
+    },
+    {
+      "id": "instant",
+      "name": "Instant",
+      "count": 7
+    },
+    {
+      "id": "obstacle",
+      "name": "Obstacle",
+      "count": 1
+    },
+    {
+      "id": "bloody",
+      "name": "Bloody",
+      "count": 1
+    },
+    {
+      "id": "clicker",
+      "name": "Clicker",
+      "count": 2
+    },
+    {
+      "id": "easy",
+      "name": "Easy",
+      "count": 7
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile",
+      "count": 4
+    },
+    {
+      "id": "puzzle",
+      "name": "Puzzle",
+      "count": 2
+    },
+    {
+      "id": "shooter",
+      "name": "Shooter",
+      "count": 2
+    },
+    {
+      "id": "educational",
+      "name": "Educational",
+      "count": 2
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "count": 6
+    },
+    {
+      "id": "flying",
+      "name": "Flying",
+      "count": 1
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "count": 1
+    },
+    {
+      "id": "fighting",
+      "name": "Fighting",
+      "count": 1
+    },
+    {
+      "id": "cute",
+      "name": "Cute",
+      "count": 1
+    },
+    {
+      "id": "hard",
+      "name": "Hard",
+      "count": 3
+    },
+    {
+      "id": "avoider",
+      "name": "Avoider",
+      "count": 1
+    },
+    {
+      "id": "random",
+      "name": "Random",
+      "count": 3
+    },
+    {
+      "id": "classic",
+      "name": "Classic",
+      "count": 2
+    },
+    {
+      "id": "escape",
+      "name": "Escape",
+      "count": 1
+    },
+    {
+      "id": "tycoon",
+      "name": "Tycoon",
+      "count": 1
+    },
+    {
+      "id": "first_person",
+      "name": "First Person",
       "count": 1
     }
   ]

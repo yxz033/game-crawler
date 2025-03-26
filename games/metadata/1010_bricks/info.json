@@ -1,0 +1,21 @@
+{
+  "id": "1010_bricks",
+  "title": "1010 Bricks",
+  "url": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/1010-bricks/index.html",
+  "description": "1010 Bricks is an entertaining and casual puzzle game. This is a colorful winter-themed puzzle game that is easy to play at first but can get challenging. There are only 3 levels but each level has a set of goals you need to finish within a short timespan. You gotta act quickly to fill out the columns or rows with colorful bricks.",
+  "developer": "Neon Games",
+  "category": "Easy",
+  "tags": [],
+  "controls": "The puzzle game is simple to play: Create a full line of blocks--either vertically or horizontally. The line of blocks will disappear and you will gain points. At the bottom of the game, you’ll see three options of varying shapes and colors of blocks. Pick one and drag it to the place you want on the graph. Be careful not to close off any sections that might make it difficult for you to create a column or row later. On the lower-right side, you’ll find the timer and your goals to let you know well you’re doing. You need to complete the goals in the selected time to pass each level. You can also use the menu from the lower-side to pause the game or turn off the sound or music. When you click on pause, you’ll find the same sound options along with the choice to go back to the menu.",
+  "thumbnailUrl": "/games/assets/1010_bricks/thumbnail.jpg",
+  "previewUrl": "/games/assets/1010_bricks/thumbnail.jpg",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "May 24, 2019",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/1010-bricks/index.html"
+}

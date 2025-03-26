@@ -1,0 +1,22 @@
+{
+  "id": "3d_logic_2",
+  "title": "3D Logic 2",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/3dlogic2_0.swf",
+  "description": "In a beautiful forest glen, a hovering cube awaits. Do you dare challenge it with your puny brainpower?",
+  "developer": "MyGame.com",
+  "category": "Brain Teasers & Quizzes",
+  "tags": [],
+  "controls": "Mouse to rotate cube  Mouseclick to make paths  Connect squares of same color",
+  "thumbnailUrl": "/games/assets/3d_logic_2/thumbnail.jpg",
+  "previewUrl": "/games/assets/3d_logic_2/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/3d_logic_2/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Nov 15, 2007",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/3dlogic2_0.swf"
+}

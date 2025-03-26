@@ -1,0 +1,22 @@
+{
+  "id": "2d_knockout",
+  "title": "2D Knockout",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/2dknockout.swf",
+  "description": "",
+  "developer": "2DArcade.com",
+  "category": "Fighting",
+  "tags": [],
+  "controls": "MOUSE to move left and right.  LEFT MOUSE BUTTON to punch.  SPACE to block.  C for auto super combo.  LEFT MOUSE BUTTON for manual super combo.",
+  "thumbnailUrl": "/games/assets/2d_knockout/thumbnail.jpg",
+  "previewUrl": "/games/assets/2d_knockout/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/2d_knockout/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jan 17, 2005",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/2dknockout.swf"
+}

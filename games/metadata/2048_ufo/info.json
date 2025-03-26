@@ -1,0 +1,22 @@
+{
+  "id": "2048_ufo",
+  "title": "2048 UFO",
+  "url": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/2048-ufo/index.html",
+  "description": "2048 UFO is an amusing sliding block puzzle game that is out of this world. There are 6 levels of puzzles for you to solve in this alien-themed puzzle game. Sliding games are fun puzzles that require thought and patience. Your goal at the end of all the levels is to make the final 2048 spaceship. Once you’ve passed all the levels, submit your score to see how you rank against other space adventurers!",
+  "developer": "Neon Games",
+  "category": "Mobile",
+  "tags": [],
+  "controls": "Playing this sliding block puzzle game is simple: Using your mouse or finger, move the tiles up or down and try to mesh together two of the same. Once you push together two of the same, they will evolve to become a new spaceship. Repeat the process and attempt to evolve the spaceships to the highest possible spaceship. Each level has its own goal which you can find in the lower-right column. Below this column, you’ll also find options to turn off the sound, music, and pause the game. Pausing the game will give you the sound options as well along with being able to go back to the main menu. Above in the same column, you’ll find the level you’re on along with your current score.",
+  "thumbnailUrl": "/games/assets/2048_ufo/thumbnail.jpg",
+  "previewUrl": "/games/assets/2048_ufo/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/2048_ufo/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "May 24, 2019",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/2048-ufo/index.html"
+}

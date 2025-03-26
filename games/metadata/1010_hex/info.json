@@ -1,0 +1,22 @@
+{
+  "id": "1010_hex",
+  "title": "1010 Hex",
+  "url": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/1010-hex/index.html",
+  "description": "1010 Hex is a grid-based puzzle game! You have probably played all manner of tetroid style shape arranging games in your life, but wwwe bet you've never played one as elegant and as colorful as 1010 Hex! This is an HTML5 based puzzle game which forces you the player to make quick tactical decisions which also have long term strategic importance. You need to place a variety of differently colored and shaped selections of hex tiles within this humble ten by ten grid. Line up at least five of the same color in a row and they disappear! You'll want them to disappear because that is how you score and otherwise the grid would fill up and prematurely end the game. 1010 Hex is a surprising game of shapes, colors, and mysteries. You will have to be smarter than the colors and the shapes if you want to reign supreme in the 1010 Hex arena! So, play now, play often, and play to win!",
+  "developer": "Neon Games",
+  "category": "Mobile",
+  "tags": [],
+  "controls": "Please use your mouse to select the variety of colored shapes from the sides of the game screen. Then also use your mouse to determine where you would like to drop these various shapes! Remember to optimize your choices based on where the objects fit now and what role they might play in the future.",
+  "thumbnailUrl": "/games/assets/1010_hex/thumbnail.jpg",
+  "previewUrl": "/games/assets/1010_hex/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/1010_hex/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jul 25, 2019",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "http://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/1010-hex/index.html"
+}

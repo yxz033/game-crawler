@@ -1,0 +1,21 @@
+{
+  "id": "10_more_bullets",
+  "title": "10 More Bullets",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/10morebullets_0.swf",
+  "description": "10 More Bullets is a shooter that tests your trigger finger. Make the most of your munitions by causing chain reactions, and don't spam your shots unless you want your win record to be as low as your ammo.",
+  "developer": "fastgames.com",
+  "category": "Shooting",
+  "tags": [],
+  "controls": "see in game instructions",
+  "thumbnailUrl": "/games/assets/10_more_bullets/thumbnail.png",
+  "previewUrl": "/games/assets/10_more_bullets/thumbnail.png",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Mar 12, 2014",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/10morebullets_0.swf"
+}

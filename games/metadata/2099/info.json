@@ -1,0 +1,22 @@
+{
+  "id": "2099",
+  "title": "2099",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/2099.swf",
+  "description": "Fly your ship and blast all who approach. The action is furious; the upgrades will make your mouth water! Prepare to be amazed, my friends.",
+  "developer": "Games121.com",
+  "category": "Flying",
+  "tags": [],
+  "controls": "WASD to fly; Mouse to aim and fire; E for blast wave; spacebar for upgrade menu",
+  "thumbnailUrl": "/games/assets/2099/thumbnail.jpg",
+  "previewUrl": "/games/assets/2099/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/2099/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jul 13, 2010",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/2099.swf"
+}

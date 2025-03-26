@@ -1,0 +1,22 @@
+{
+  "id": "3d_shooter",
+  "title": "3D Shooter",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/3dshooter_0.swf",
+  "description": "3D Shooter is a free 3d Shooter game. Take your aim to these turning targets and see if you can shoot through the blue. Can you take them all out in time and still get bull's eyes?",
+  "developer": "Absolutist.com",
+  "category": "Shooter",
+  "tags": [],
+  "controls": "See game for instructions",
+  "thumbnailUrl": "/games/assets/3d_shooter/thumbnail.png",
+  "previewUrl": "/games/assets/3d_shooter/thumbnail.png",
+  "previewVideoUrl": "/games/assets/3d_shooter/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 26, 2004",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/3dshooter_0.swf"
+}

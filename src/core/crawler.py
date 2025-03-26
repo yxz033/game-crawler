@@ -15,6 +15,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 from PIL import Image
 import io
+import random
+import mimetypes
+from urllib.parse import urlparse
+from pathlib import Path
+from tqdm import tqdm
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.models.game import Game
@@ -145,7 +150,13 @@ class GameCrawler:
         self.base_url = "https://www.addictinggames.com/all-games"
         self.driver = None
         self.setup_selenium()
-        
+        self.retry_count = 3
+        self.scroll_pause_time = 2
+        self.max_retries = 3
+        self.progress_file = "crawl_progress.json"
+        self.stats = {"success": 0, "failed": 0}
+        self.setup_logging()
+
     def setup_selenium(self):
         """设置Selenium WebDriver"""
         chrome_options = Options()
@@ -161,6 +172,30 @@ class GameCrawler:
         service = Service(ChromeDriverManager().install())
         self.driver = webdriver.Chrome(service=service, options=chrome_options)
         
+    def setup_logging(self):
+        """设置日志系统"""
+        # 创建logs目录
+        os.makedirs("logs", exist_ok=True)
+        
+        # 设置日志格式
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        
+        # 文件处理器 - 详细日志
+        file_handler = logging.FileHandler("logs/crawler.log", encoding='utf-8')
+        file_handler.setFormatter(formatter)
+        file_handler.setLevel(logging.DEBUG)
+        
+        # 控制台处理器 - 只显示关键信息
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(formatter)
+        console_handler.setLevel(logging.INFO)
+        
+        # 配置根日志器
+        self.logger = logging.getLogger()
+        self.logger.setLevel(logging.DEBUG)
+        self.logger.addHandler(file_handler)
+        self.logger.addHandler(console_handler)
+            
     def download_and_convert_image(self, url: str, save_path: str, max_width: int = None, quality: int = 85):
         """下载图片并转换为WebP格式"""
         try:
@@ -189,29 +224,158 @@ class GameCrawler:
             return False
             
     def download_file(self, url: str, save_path: str):
-        """下载文件到指定路径"""
+        """下载文件到指定路径，保留原始格式"""
         try:
+            # 创建保存目录
             os.makedirs(os.path.dirname(save_path), exist_ok=True)
+            
+            # 下载文件
             response = requests.get(url, stream=True)
             response.raise_for_status()
             
+            # 获取文件扩展名
+            content_type = response.headers.get('content-type', '')
+            ext = mimetypes.guess_extension(content_type) or os.path.splitext(urlparse(url).path)[1]
+            if not ext:
+                ext = '.jpg'  # 默认使用jpg
+            
+            # 更新保存路径使用原始扩展名
+            save_path = str(Path(save_path).with_suffix(ext))
+            
+            # 保存文件
             with open(save_path, 'wb') as f:
                 for chunk in response.iter_content(chunk_size=8192):
                     if chunk:
                         f.write(chunk)
-            print(f"文件已保存到: {save_path}")
-            return True
-        except Exception as e:
-            print(f"下载文件时出错: {str(e)}")
-            return False
             
+            self.logger.debug(f"文件已保存到: {save_path}")
+            return save_path
+        except Exception as e:
+            self.logger.error(f"下载文件时出错: {str(e)}")
+            return None
+            
+    def crawl(self):
+        """爬取所有游戏"""
+        print("\n=== 游戏爬虫启动 ===")
+        progress = self.load_progress()
+        
+        try:
+            self.driver.get(self.base_url)
+            wait = WebDriverWait(self.driver, 10)
+            wait.until(EC.presence_of_element_located((By.CLASS_NAME, "Listed__Game")))
+            
+            # 滚动加载所有游戏
+            self.scroll_to_load_all_games()
+            
+            # 解析游戏列表
+            soup = BeautifulSoup(self.driver.page_source, 'html.parser')
+            game_elements = soup.select('div.Listed__Game a.Listed__Game__Inner')
+            total_games = len(game_elements)
+            
+            print(f"\n总共找到 {total_games} 个游戏")
+            
+            # 使用tqdm创建进度条,total设为游戏总数
+            pbar = tqdm(total=total_games, desc="爬取进度")
+            
+            # 处理所有游戏
+            for element in game_elements:
+                try:
+                    game = {
+                        "title": element.text.strip(),
+                        "url": element.get('href', '')
+                    }
+                    
+                    if game["url"] and not game["url"].startswith("http"):
+                        game["url"] = "https://www.addictinggames.com" + game["url"]
+                    
+                    # 检查是否已处理过该游戏
+                    if game["url"] in progress["processed_games"]:
+                        self.logger.debug(f"跳过已处理的游戏: {game['title']}")
+                        pbar.update(1)
+                        continue
+                    
+                    print(f"\n正在处理: {game['title']}")
+                    
+                    # 爬取游戏详情
+                    retry_count = 0
+                    while retry_count < self.max_retries:
+                        try:
+                            game_info = self.crawl_game_detail(game["url"], game["title"])
+                            if game_info:
+                                self.update_index([game_info])
+                                progress["last_game"] = game["url"]
+                                progress["processed_games"].append(game["url"])
+                                self.save_progress(progress)
+                                self.stats["success"] += 1
+                            else:
+                                self.stats["failed"] += 1
+                            break
+                        except Exception as e:
+                            retry_count += 1
+                            self.logger.error(f"处理游戏失败 (尝试 {retry_count}/{self.max_retries}): {str(e)}")
+                            if retry_count >= self.max_retries:
+                                self.stats["failed"] += 1
+                    
+                    # 更新进度条
+                    pbar.update(1)
+                    
+                    # 随机延迟1-3秒,避免请求过快
+                    time.sleep(random.uniform(1, 3))
+                    
+                except Exception as e:
+                    self.logger.error(f"解析游戏元素时出错: {str(e)}")
+                    self.stats["failed"] += 1
+                    pbar.update(1)
+            
+            pbar.close()
+            print(f"\n=== 爬虫运行完成 ===")
+            print(f"成功: {self.stats['success']} | 失败: {self.stats['failed']}")
+            
+        except Exception as e:
+            self.logger.error(f"爬取过程中出现错误: {str(e)}")
+        finally:
+            if hasattr(self, 'driver'):
+                self.driver.quit()
+
+    def get_video_url(self, game_data=None, soup=None):
+        """获取视频URL"""
+        try:
+            # 首先尝试从JavaScript数据中获取
+            if game_data and 'videoThumbnailUrl' in game_data:
+                video_url = game_data.get('videoThumbnailUrl')
+                if video_url:
+                    self.logger.debug(f"从JavaScript数据中找到视频URL: {video_url}")
+                    return video_url
+            
+            # 尝试从video标签获取URL
+            if soup:
+                try:
+                    # 找到Gameplay标题下的video标签
+                    gameplay_header = soup.find('h4', text='10 Mahjong Gameplay')
+                    if gameplay_header:
+                        video_div = gameplay_header.find_next('div')
+                        if video_div:
+                            video_source = video_div.find('video').find('source')
+                            if video_source:
+                                video_url = video_source.get('src')
+                                if video_url:
+                                    self.logger.debug(f"从video标签找到视频URL: {video_url}")
+                                    return video_url
+                except Exception as e:
+                    self.logger.debug(f"从video标签获取视频URL失败: {str(e)}")
+            
+            return None
+        except Exception as e:
+            self.logger.error(f"获取视频URL时出错: {str(e)}")
+            return None
+
     def crawl_game_detail(self, game_url: str, game_title: str):
         """爬取游戏详情页"""
-        print(f"\n开始爬取游戏详情: {game_title}")
+        self.logger.debug(f"开始爬取游戏详情: {game_title}")
         
         try:
             # 访问游戏详情页
-            print(f"访问URL: {game_url}")
+            self.logger.debug(f"访问URL: {game_url}")
             self.driver.get(game_url)
             
             # 等待页面加载
@@ -219,15 +383,22 @@ class GameCrawler:
             wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
             
             # 等待游戏iframe加载
-            print("等待游戏iframe加载...")
             time.sleep(5)  # 给页面一些时间加载JavaScript
             
             # 获取页面源代码
             page_source = self.driver.page_source
             soup = BeautifulSoup(page_source, 'html.parser')
             
-            # 尝试从JavaScript数据中提取游戏URL
+            # 创建游戏专属目录
+            game_id = game_title.replace(" ", "_").lower()
+            metadata_dir = os.path.join("games/metadata", game_id)
+            assets_dir = os.path.join("games/assets", game_id)
+            os.makedirs(metadata_dir, exist_ok=True)
+            os.makedirs(os.path.join(assets_dir, "screenshots"), exist_ok=True)
+            
+            # 获取游戏URL和游戏数据
             game_url = None
+            game_data = None
             next_data = soup.find('script', {'id': '__NEXT_DATA__'})
             if next_data:
                 try:
@@ -241,42 +412,12 @@ class GameCrawler:
                             game_url = 'https://www.addictinggames.com' + embed_url
                         else:
                             game_url = embed_url
-                        print(f"从JavaScript数据中找到游戏URL: {game_url}")
-                    else:
-                        print("JavaScript数据中没有找到游戏URL")
-                        print("游戏数据:", json.dumps(game_data, indent=2))
+                        self.logger.debug(f"从JavaScript数据中找到游戏URL: {game_url}")
                 except Exception as e:
-                    print(f"解析JavaScript数据时出错: {str(e)}")
+                    self.logger.error(f"解析JavaScript数据时出错: {str(e)}")
             
-            # 查找游戏iframe
-            if not game_url:
-                game_iframe = soup.select_one('iframe#game-iframe, iframe.GamePlayer__Game')
-                if game_iframe:
-                    iframe_url = game_iframe.get('src', '')
-                    if iframe_url:
-                        if iframe_url.startswith('//'):
-                            game_url = 'https:' + iframe_url
-                        elif iframe_url.startswith('/'):
-                            game_url = 'https://www.addictinggames.com' + iframe_url
-                        else:
-                            game_url = iframe_url
-                        print(f"找到游戏iframe URL: {game_url}")
-            
-            # 如果还是没有找到游戏URL，尝试从其他脚本中查找
-            if not game_url:
-                print("尝试从其他脚本中查找游戏URL...")
-                scripts = soup.find_all('script')
-                for script in scripts:
-                    script_text = str(script)
-                    if 'gameUrl' in script_text or 'game_url' in script_text:
-                        print("找到可能包含游戏URL的脚本:", script_text[:200])
-            
-            # 创建游戏专属目录
-            game_id = game_title.replace(" ", "_").lower()
-            metadata_dir = os.path.join("games/metadata", game_id)
-            assets_dir = os.path.join("games/assets", game_id)
-            os.makedirs(metadata_dir, exist_ok=True)
-            os.makedirs(os.path.join(assets_dir, "screenshots"), exist_ok=True)
+            # 获取视频URL
+            video_url = self.get_video_url(game_data, soup)
             
             # 获取游戏信息
             info = {
@@ -287,9 +428,10 @@ class GameCrawler:
                 "developer": "",
                 "category": "",
                 "tags": [],
-                "controls": "",  # 修改为字符串类型
-                "thumbnailUrl": f"/games/assets/{game_id}/thumbnail.webp",
-                "previewUrl": f"/games/assets/{game_id}/preview.webp",
+                "controls": "",
+                "thumbnailUrl": "",  # 稍后更新
+                "previewUrl": "",    # 稍后更新
+                "previewVideoUrl": "",  # 稍后更新
                 "screenshots": [],
                 "features": [],
                 "device": {
@@ -333,6 +475,34 @@ class GameCrawler:
             instructions = soup.select_one('.Content h4:-soup-contains("Instructions") + p')
             if instructions:
                 info["controls"] = instructions.text.strip()
+            
+            # 下载并处理图片和视频
+            thumbnail = soup.select_one('img[alt$="Thumbnail"]')
+            if thumbnail:
+                src = thumbnail.get('src', '')
+                if src:
+                    if src.startswith('/_next/image'):
+                        srcset = thumbnail.get('srcset', '').split(',')
+                        if srcset:
+                            src = srcset[-1].strip().split(' ')[0]
+                    
+                    if src.startswith('/'):
+                        src = 'https://www.addictinggames.com' + src
+                        
+                    # 下载缩略图
+                    thumbnail_path = os.path.join(assets_dir, "thumbnail")  # 不指定扩展名
+                    saved_path = self.download_file(src, thumbnail_path)
+                    if saved_path:
+                        # 更新路径，使用相对路径
+                        info["thumbnailUrl"] = f"/games/assets/{game_id}/{os.path.basename(saved_path)}"
+                        info["previewUrl"] = info["thumbnailUrl"]  # 使用相同的图片作为预览
+            
+            # 下载预览视频
+            if video_url:
+                video_path = os.path.join(assets_dir, "preview")  # 不指定扩展名
+                saved_path = self.download_file(video_url, video_path)
+                if saved_path:
+                    info["previewVideoUrl"] = f"/games/assets/{game_id}/{os.path.basename(saved_path)}"
             
             # 保存游戏信息
             with open(os.path.join(metadata_dir, "info.json"), "w", encoding="utf-8") as f:
@@ -383,91 +553,76 @@ class GameCrawler:
                             "date": date.text.strip()
                         })
                 except Exception as e:
-                    print(f"解析评论时出错: {str(e)}")
+                    self.logger.error(f"解析评论时出错: {str(e)}")
                     continue
             
             # 保存评论数据
             with open(os.path.join(metadata_dir, "comments.json"), "w", encoding="utf-8") as f:
                 json.dump(comments, f, ensure_ascii=False, indent=2)
             
-            # 下载并处理图片
-            thumbnail = soup.select_one('img[alt$="Thumbnail"]')
-            if thumbnail:
-                src = thumbnail.get('src', '')
-                if src:
-                    if src.startswith('/_next/image'):
-                        srcset = thumbnail.get('srcset', '').split(',')
-                        if srcset:
-                            src = srcset[-1].strip().split(' ')[0]
-                    
-                    if src.startswith('/'):
-                        src = 'https://www.addictinggames.com' + src
-                        
-                    # 下载并转换缩略图
-                    thumbnail_path = os.path.join(assets_dir, "thumbnail.webp")
-                    self.download_and_convert_image(src, thumbnail_path, max_width=800)
-                    
-                    # 同时保存为预览图
-                    preview_path = os.path.join(assets_dir, "preview.webp")
-                    self.download_and_convert_image(src, preview_path, max_width=800)
-            
-            print(f"游戏详情已保存到: {metadata_dir}")
+            self.logger.debug(f"游戏详情已保存到: {metadata_dir}")
             return info
             
         except Exception as e:
-            print(f"爬取游戏详情时出错: {str(e)}")
+            self.logger.error(f"爬取游戏详情时出错: {str(e)}")
             return None
         
-    def crawl(self):
-        print("爬虫系统启动...")
+    def load_progress(self):
+        """加载爬取进度"""
+        if os.path.exists(self.progress_file):
+            try:
+                with open(self.progress_file, 'r') as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"加载进度文件失败: {str(e)}")
+        return {"last_game": None, "processed_games": []}
+
+    def save_progress(self, progress):
+        """保存爬取进度"""
         try:
-            print("正在访问游戏列表页面...")
-            self.driver.get(self.base_url)
-            
-            # 等待页面加载
-            print("等待页面加载...")
-            wait = WebDriverWait(self.driver, 10)
-            wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
-            wait.until(EC.presence_of_element_located((By.CLASS_NAME, "Listed__Game")))
-            
-            # 解析游戏列表
-            print("开始解析游戏列表...")
-            soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-            game_elements = soup.select('div.Listed__Game a.Listed__Game__Inner')
-            
-            # 只处理第一个游戏
-            if game_elements:
-                element = game_elements[0]
-                try:
-                    game = {
-                        "title": element.text.strip(),
-                        "url": element.get('href', '')
-                    }
-                    if game["url"] and not game["url"].startswith("http"):
-                        game["url"] = "https://www.addictinggames.com" + game["url"]
-                    print(f"找到游戏: {game['title']} - {game['url']}")
-                    
-                    # 爬取游戏详情
-                    game_info = self.crawl_game_detail(game["url"], game["title"])
-                    if game_info:
-                        # 更新索引文件
-                        self.update_index([game_info])
-                    
-                except Exception as e:
-                    print(f"解析游戏元素时出错: {str(e)}")
-            else:
-                print("未找到任何游戏")
-            
-            print("\n爬虫运行完成!")
-            print("浏览器窗口将保持打开状态,请手动关闭浏览器窗口...")
-            input("按回车键退出程序...")
-            
+            with open(self.progress_file, 'w') as f:
+                json.dump(progress, f)
         except Exception as e:
-            print(f"爬取过程中出现错误: {str(e)}")
-            print("\n爬虫运行完成!")
-            print("浏览器窗口将保持打开状态,请手动关闭浏览器窗口...")
-            input("按回车键退出程序...")
+            print(f"保存进度失败: {str(e)}")
+
+    def scroll_to_load_all_games(self):
+        """滚动页面加载所有游戏"""
+        last_height = self.driver.execute_script("return document.body.scrollHeight")
+        games_count = 0
+        no_change_count = 0
+        max_no_change = 3  # 连续3次没有新内容就认为加载完成
+        
+        # 创建进度条
+        pbar = tqdm(desc="加载游戏列表", unit="个")
+        
+        while True:
+            # 滚动到页面底部
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(self.scroll_pause_time)
+            
+            # 获取当前游戏数量
+            current_games = len(self.driver.find_elements(By.CSS_SELECTOR, '.Listed__Game'))
+            
+            if current_games > games_count:
+                pbar.update(current_games - games_count)
+                games_count = current_games
+                no_change_count = 0
+            else:
+                no_change_count += 1
                 
+            if no_change_count >= max_no_change:
+                break
+                
+            # 检查新的页面高度
+            new_height = self.driver.execute_script("return document.body.scrollHeight")
+            if new_height == last_height:
+                no_change_count += 1
+            else:
+                last_height = new_height
+                no_change_count = 0
+        
+        pbar.close()
+
     def update_index(self, games: List[Dict]):
         """更新游戏索引文件"""
         index_file = "games/metadata/index.json"
