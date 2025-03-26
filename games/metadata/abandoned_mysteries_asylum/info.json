@@ -1,0 +1,22 @@
+{
+  "id": "abandoned_mysteries_asylum",
+  "title": "Abandoned Mysteries Asylum",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/abandoned-mysteries-asylum.swf",
+  "description": "Abandoned Mysteries Asylum is a free escape game. Explore an old asylum to find a missing diary and clues to solve the mystery.",
+  "developer": "selfdefiant",
+  "category": "Escape",
+  "tags": [],
+  "controls": "Mouse controls",
+  "thumbnailUrl": "/games/assets/abandoned_mysteries_asylum/thumbnail.png",
+  "previewUrl": "/games/assets/abandoned_mysteries_asylum/thumbnail.png",
+  "previewVideoUrl": "/games/assets/abandoned_mysteries_asylum/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 26, 2016",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/abandoned-mysteries-asylum.swf"
+}

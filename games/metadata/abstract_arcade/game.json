@@ -1,0 +1,22 @@
+{
+  "id": "abstract_arcade",
+  "title": "Abstract Arcade",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/abstractarcade_0.swf",
+  "description": "The shooting part will be familiar. But Circle Dance is nutty, yo! In any case, any color besides green is your enemy. And you really should eliminate your enemies...",
+  "developer": "Sina Jafarzadeh",
+  "category": "Shooting",
+  "tags": [],
+  "controls": "WASD/arrows to move; Mouse to aim and fire; spacebar/CTRL for slow motion",
+  "thumbnailUrl": "/games/assets/abstract_arcade/thumbnail.png",
+  "previewUrl": "/games/assets/abstract_arcade/thumbnail.png",
+  "previewVideoUrl": "/games/assets/abstract_arcade/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Apr 23, 2010",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/abstractarcade_0.swf"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "achievement_unlocked",
+  "title": "Achievement Unlocked",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/achievementunlocked.swf",
+  "description": "You can't make a move without earning an award in this game. On the other hand, you can't level up without earning EVERY achievement! Fortunately, hints abound and lives are plentiful. Get Your Badge On, Baby!",
+  "developer": "ArmorGames",
+  "category": "Classic",
+  "tags": [],
+  "controls": "Arrow keys",
+  "thumbnailUrl": "/games/assets/achievement_unlocked/thumbnail.jpg",
+  "previewUrl": "/games/assets/achievement_unlocked/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/achievement_unlocked/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Dec 30, 2008",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/achievementunlocked.swf"
+}

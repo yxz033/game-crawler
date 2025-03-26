@@ -1,0 +1,22 @@
+{
+  "id": "absolutist_black_jack",
+  "title": "Absolutist Black Jack",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/absolutistblackjack_0.swf",
+  "description": "It’s like playing real blackjack, without going broke, and you don’t have to sit next to some weird tourist dude in cutoff sweatpants.",
+  "developer": "Absolutist.com",
+  "category": "Tycoon",
+  "tags": [],
+  "controls": "Your goal as the player is to draw cards until your hand comes as close as possible to 21 without exceeding 21. If your first two cards total to 21, you have blackjack, and win 3/2 of your bet. Aces count as either 1 or 11, dressed cards as 10, and remaining cards according to their number values. The dealer must draw cards until he has at least 17, and must stand at 17 or higher.",
+  "thumbnailUrl": "/games/assets/absolutist_black_jack/thumbnail.jpg",
+  "previewUrl": "/games/assets/absolutist_black_jack/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/absolutist_black_jack/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Sep 22, 2004",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/absolutistblackjack_0.swf"
+}

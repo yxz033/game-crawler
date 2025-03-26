@@ -157,6 +157,21 @@ class GameCrawler:
         self.stats = {"success": 0, "failed": 0}
         self.game_cache = {}  # 游戏数据缓存
         self.game_buffer = []  # 游戏信息缓冲区，用于批量更新索引
+        
+        # 并发控制
+        self.max_workers = 5  # 最大线程数
+        self.thread_pool = None  # 线程池在实际使用前初始化
+        
+        # 线程安全锁
+        self.cache_lock = threading.Lock()  # 缓存访问锁
+        self.buffer_lock = threading.Lock()  # 缓冲区访问锁
+        self.progress_lock = threading.Lock()  # 进度信息锁
+        self.stats_lock = threading.Lock()  # 统计信息锁
+        
+        # 线程本地存储WebDriver
+        self.local_drivers = {}  # 存储线程ID到WebDriver的映射
+        self.driver_lock = threading.Lock()  # WebDriver访问锁
+        
         self.setup_logging()
 
     def setup_selenium(self):
@@ -285,13 +300,12 @@ class GameCrawler:
             return None
             
     def crawl(self):
-        """爬取所有游戏"""
+        """爬取所有游戏，使用多线程并发处理"""
         print("\n=== 游戏爬虫启动 ===")
         progress = self.load_progress()
         
-        # 添加批量保存进度的计数器
-        processed_count = 0
-        batch_size = 10  # 每处理10个游戏保存一次进度
+        # 批量处理大小
+        batch_size = 10
         
         try:
             self.driver.get(self.base_url)
@@ -308,10 +322,17 @@ class GameCrawler:
             
             print(f"\n总共找到 {total_games} 个游戏")
             
-            # 使用tqdm创建进度条,total设为游戏总数
+            # 初始化线程池
+            self.thread_pool = ThreadPoolExecutor(max_workers=self.max_workers)
+            self.logger.info(f"初始化线程池，并发线程数: {self.max_workers}")
+            
+            # 使用tqdm创建进度条
             pbar = tqdm(total=total_games, desc="爬取进度")
             
-            # 处理所有游戏
+            # 收集需要处理的游戏
+            games_to_process = []
+            
+            # 第一步：过滤已处理的游戏
             for element in game_elements:
                 try:
                     game = {
@@ -325,81 +346,46 @@ class GameCrawler:
                     # 生成游戏ID
                     game_id = self.sanitize_id(game["title"])
                     
-                    # 检查游戏是否在缓存中
-                    if game_id in self.game_cache:
-                        self.logger.debug(f"使用缓存数据: {game['title']}")
+                    # 快速过滤：检查缓存和已处理列表
+                    if game_id in self.game_cache or game["url"] in progress["processed_games"]:
                         pbar.update(1)
                         continue
                     
-                    # 检查是否已处理过该游戏
-                    if game["url"] in progress["processed_games"]:
-                        self.logger.debug(f"跳过已处理的游戏: {game['title']}")
-                        pbar.update(1)
-                        continue
-                    
-                    print(f"\n正在处理: {game['title']}")
-                    
-                    # 爬取游戏详情
-                    retry_count = 0
-                    while retry_count < self.max_retries:
-                        try:
-                            game_info = self.crawl_game_detail(game["url"], game["title"])
-                            if game_info:
-                                # 更新缓存
-                                self.game_cache[game_info["id"]] = game_info
-                                
-                                # 添加到游戏缓冲区，以便批量更新索引
-                                self.game_buffer.append(game_info)
-                                
-                                # 批量处理计数
-                                processed_count += 1
-                                
-                                # 当缓冲区达到一定大小时，批量更新索引
-                                if len(self.game_buffer) >= batch_size:
-                                    self.update_index(self.game_buffer)
-                                    self.logger.info(f"已批量更新索引，游戏数：{len(self.game_buffer)}")
-                                    self.game_buffer = []  # 清空缓冲区
-                                
-                                progress["last_game"] = game["url"]
-                                progress["processed_games"].append(game["url"])
-                                
-                                # 批量保存进度，仅在处理了一批游戏后保存
-                                if processed_count % batch_size == 0:
-                                    self.save_progress(progress)
-                                    self.logger.info(f"已批量保存进度，当前处理: {processed_count}/{total_games}")
-                                
-                                self.stats["success"] += 1
-                            else:
-                                self.stats["failed"] += 1
-                            break
-                        except Exception as e:
-                            retry_count += 1
-                            self.logger.error(f"处理游戏失败 (尝试 {retry_count}/{self.max_retries}): {str(e)}")
-                            if retry_count >= self.max_retries:
-                                self.stats["failed"] += 1
-                    
-                    # 更新进度条
-                    pbar.update(1)
-                    
-                    # 智能控制请求速率，仅在连续请求时短暂延迟
-                    # 使用较小的延迟，因为大部分等待已经由显式等待处理
-                    if processed_count % 5 == 0:  # 每5个请求后短暂延迟
-                        time.sleep(random.uniform(0.5, 1.5))
+                    # 收集需要处理的游戏
+                    games_to_process.append(game)
                     
                 except Exception as e:
                     self.logger.error(f"解析游戏元素时出错: {str(e)}")
-                    self.stats["failed"] += 1
+                    with self.stats_lock:
+                        self.stats["failed"] += 1
                     pbar.update(1)
             
-            # 确保最后处理的游戏也被保存
-            if processed_count % batch_size != 0:
-                self.save_progress(progress)
+            self.logger.info(f"需要处理的游戏数量: {len(games_to_process)}")
             
-            # 确保缓冲区中的游戏也都更新到索引中
+            # 第二步：批量处理游戏
+            if games_to_process:
+                # 创建Future到游戏的映射
+                futures = {}
+                
+                # 提交所有任务到线程池
+                for game in games_to_process:
+                    future = self.thread_pool.submit(self.process_game_task, game, progress)
+                    futures[future] = game
+                
+                # 处理完成的任务
+                self._process_completed_futures(futures, pbar, progress, batch_size)
+            
+            # 确保最后的缓冲区也被处理
             if self.game_buffer:
-                self.update_index(self.game_buffer)
-                self.logger.info(f"已更新剩余 {len(self.game_buffer)} 个游戏到索引")
-                self.game_buffer = []
+                with self.buffer_lock:
+                    buffer_copy = self.game_buffer.copy()
+                    self.game_buffer = []
+                
+                self.update_index(buffer_copy)
+                self.logger.info(f"已更新剩余 {len(buffer_copy)} 个游戏到索引")
+            
+            # 最后保存一次进度
+            self.save_progress(progress)
                 
             pbar.close()
             print(f"\n=== 爬虫运行完成 ===")
@@ -412,15 +398,78 @@ class GameCrawler:
             # 确保发生异常时也保存已处理的游戏
             if self.game_buffer:
                 try:
-                    self.update_index(self.game_buffer)
-                    self.logger.info(f"异常退出前保存 {len(self.game_buffer)} 个游戏到索引")
+                    with self.buffer_lock:
+                        buffer_copy = self.game_buffer.copy()
+                        self.game_buffer = []
+                    
+                    self.update_index(buffer_copy)
+                    self.logger.info(f"异常退出前保存 {len(buffer_copy)} 个游戏到索引")
                 except Exception as save_error:
                     self.logger.error(f"异常退出时保存索引失败: {str(save_error)}")
                 
             self.save_progress(progress)
         finally:
+            # 关闭所有线程的WebDriver实例
+            self.close_thread_drivers()
+            
+            # 关闭线程池
+            if self.thread_pool:
+                self.thread_pool.shutdown(wait=True)
+                self.logger.info("线程池已关闭")
+            
+            # 关闭主WebDriver
             if hasattr(self, 'driver'):
                 self.driver.quit()
+                
+    def _process_completed_futures(self, futures, pbar, progress, batch_size):
+        """处理已完成的Future任务"""
+        completed_count = 0
+        buffer_update_threshold = batch_size
+        progress_save_threshold = batch_size * 2
+        
+        # 等待任务完成并处理结果
+        for future in as_completed(futures):
+            game = futures[future]
+            try:
+                result = future.result()
+                completed_count += 1
+                
+                if result["success"] and result["game_info"]:
+                    self.logger.debug(f"任务成功完成: {game['title']}")
+                else:
+                    self.logger.debug(f"任务跳过或失败: {game['title']} - {result.get('error', '未知错误')}")
+                
+                # 更新进度条
+                pbar.update(1)
+                
+                # 每处理一定数量的任务，批量保存进度和更新索引
+                if completed_count % progress_save_threshold == 0:
+                    self.save_progress(progress)
+                    self.logger.info(f"已处理 {completed_count}/{len(futures)} 个任务，保存进度")
+                
+                # 批量更新索引
+                if completed_count % buffer_update_threshold == 0:
+                    with self.buffer_lock:
+                        if len(self.game_buffer) >= buffer_update_threshold:
+                            buffer_copy = self.game_buffer.copy()
+                            self.game_buffer = []
+                            
+                            # 释放锁后更新索引
+                            self.update_index(buffer_copy)
+                            self.logger.info(f"已批量更新索引，游戏数：{len(buffer_copy)}")
+                
+            except Exception as e:
+                self.logger.error(f"处理任务结果出错: {game['title']} - {str(e)}")
+                pbar.update(1)
+                with self.stats_lock:
+                    self.stats["failed"] += 1
+        
+        # 确保最后的进度也保存
+        self.save_progress(progress)
+        self.logger.info(f"所有 {completed_count} 个任务已完成处理")
+        
+        # 短暂延迟，避免请求过于频繁
+        time.sleep(random.uniform(0.2, 0.5))
 
     def sanitize_id(self, text: str) -> str:
         """生成安全的ID，去除特殊字符"""
@@ -471,23 +520,28 @@ class GameCrawler:
             self.logger.error(f"获取视频URL时出错: {str(e)}")
             return None
 
-    def crawl_game_detail(self, game_url: str, game_title: str):
+    def crawl_game_detail(self, game_url: str, game_title: str, use_thread_driver=False):
         """爬取游戏详情页"""
         self.logger.debug(f"开始爬取游戏详情: {game_title}")
         
         try:
             # 先检查缓存中是否已存在该游戏
             game_id = self.sanitize_id(game_title)
-            if game_id in self.game_cache:
-                self.logger.info(f"使用缓存中的游戏数据: {game_title}")
-                return self.game_cache[game_id]
+            with self.cache_lock:
+                if game_id in self.game_cache:
+                    self.logger.info(f"使用缓存中的游戏数据: {game_title}")
+                    return self.game_cache[game_id]
+            
+            # 以下是原有的爬取逻辑
+            # 获取合适的WebDriver，根据是否并发使用不同的实例
+            driver = self.get_thread_driver() if use_thread_driver else self.driver
             
             # 访问游戏详情页
             self.logger.debug(f"访问URL: {game_url}")
-            self.driver.get(game_url)
+            driver.get(game_url)
             
             # 等待页面基本元素加载
-            wait = WebDriverWait(self.driver, 10)
+            wait = WebDriverWait(driver, 10)
             wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
             
             # 等待游戏内容加载 - 使用具体元素而不是固定等待
@@ -499,7 +553,7 @@ class GameCrawler:
                 self.logger.warning(f"等待游戏详情元素超时: {str(e)}")
             
             # 获取页面源代码
-            page_source = self.driver.page_source
+            page_source = driver.page_source
             soup = BeautifulSoup(page_source, 'html.parser')
             
             # 创建游戏专属目录
@@ -680,6 +734,11 @@ class GameCrawler:
                 json.dump(comments, f, ensure_ascii=False, indent=2)
             
             self.logger.debug(f"游戏详情已保存到: {metadata_dir}")
+            
+            # 线程安全地更新缓存
+            with self.cache_lock:
+                self.game_cache[game_id] = info
+                
             return info
             
         except Exception as e:
@@ -907,6 +966,117 @@ class GameCrawler:
         except Exception as e:
             self.logger.error(f"保存索引文件失败: {str(e)}")
             
+    def get_thread_driver(self):
+        """获取当前线程的WebDriver实例"""
+        thread_id = threading.get_ident()
+        
+        with self.driver_lock:
+            if thread_id not in self.local_drivers:
+                self.logger.debug(f"为线程 {thread_id} 创建新的WebDriver实例")
+                # 创建新的WebDriver实例
+                chrome_options = Options()
+                chrome_options.add_argument("--headless=new")
+                chrome_options.add_argument("--disable-gpu")
+                chrome_options.add_argument("--no-sandbox")
+                chrome_options.add_argument("--disable-dev-shm-usage")
+                chrome_options.add_argument('--ignore-certificate-errors')
+                chrome_options.add_argument('--ignore-ssl-errors')
+                chrome_options.add_argument('--log-level=3')
+                chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+                
+                service = Service(ChromeDriverManager().install())
+                self.local_drivers[thread_id] = webdriver.Chrome(service=service, options=chrome_options)
+            
+            return self.local_drivers[thread_id]
+            
+    def close_thread_drivers(self):
+        """关闭所有线程的WebDriver实例"""
+        with self.driver_lock:
+            for thread_id, driver in self.local_drivers.items():
+                try:
+                    driver.quit()
+                    self.logger.debug(f"已关闭线程 {thread_id} 的WebDriver实例")
+                except Exception as e:
+                    self.logger.error(f"关闭线程 {thread_id} 的WebDriver实例时出错: {str(e)}")
+            
+            # 清空驱动程序字典
+            self.local_drivers.clear()
+
+    def process_game_task(self, game, progress):
+        """处理单个游戏爬取任务，用于并发执行"""
+        game_id = self.sanitize_id(game["title"])
+        result = {
+            "success": False,
+            "game_info": None,
+            "error": None
+        }
+        
+        try:
+            # 检查游戏是否在缓存中（再次检查是为了避免任务提交后缓存更新的情况）
+            with self.cache_lock:
+                if game_id in self.game_cache:
+                    self.logger.debug(f"[线程任务] 使用缓存数据: {game['title']}")
+                    result["success"] = True
+                    result["game_info"] = self.game_cache[game_id]
+                    return result
+            
+            # 检查是否已处理过该游戏
+            with self.progress_lock:
+                if game["url"] in progress["processed_games"]:
+                    self.logger.debug(f"[线程任务] 跳过已处理的游戏: {game['title']}")
+                    result["success"] = True
+                    return result
+            
+            self.logger.info(f"[线程任务] 处理游戏: {game['title']}")
+            
+            # 爬取游戏详情，使用线程专用WebDriver
+            retry_count = 0
+            while retry_count < self.max_retries:
+                try:
+                    game_info = self.crawl_game_detail(game["url"], game["title"], use_thread_driver=True)
+                    if game_info:
+                        result["success"] = True
+                        result["game_info"] = game_info
+                        
+                        # 线程安全地更新进度
+                        with self.progress_lock:
+                            if game["url"] not in progress["processed_games"]:
+                                progress["processed_games"].append(game["url"])
+                                progress["last_game"] = game["url"]
+                        
+                        # 线程安全地添加到缓冲区
+                        with self.buffer_lock:
+                            self.game_buffer.append(game_info)
+                        
+                        # 线程安全地更新统计信息
+                        with self.stats_lock:
+                            self.stats["success"] += 1
+                    else:
+                        with self.stats_lock:
+                            self.stats["failed"] += 1
+                    break
+                except Exception as e:
+                    retry_count += 1
+                    error_msg = f"处理游戏失败 (尝试 {retry_count}/{self.max_retries}): {str(e)}"
+                    self.logger.error(error_msg)
+                    result["error"] = error_msg
+                    
+                    if retry_count >= self.max_retries:
+                        with self.stats_lock:
+                            self.stats["failed"] += 1
+            
+            return result
+            
+        except Exception as e:
+            error_msg = f"游戏任务处理异常: {str(e)}"
+            self.logger.error(error_msg)
+            result["error"] = error_msg
+            
+            with self.stats_lock:
+                self.stats["failed"] += 1
+            
+            return result
+
 if __name__ == "__main__":
     crawler = GameCrawler()
     crawler.crawl() 

@@ -1,0 +1,22 @@
+{
+  "id": "a-blast",
+  "title": "A-Blast",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/ablast.swf",
+  "description": "",
+  "developer": "Plk8p.edu.hk",
+  "category": "Flying",
+  "tags": [],
+  "controls": "MOUSE to move.  LEFT MOUSE BUTTON to fire.",
+  "thumbnailUrl": "/games/assets/a-blast/thumbnail.jpg",
+  "previewUrl": "/games/assets/a-blast/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/a-blast/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 30, 2004",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/ablast.swf"
+}

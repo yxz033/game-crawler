@@ -1,0 +1,22 @@
+{
+  "id": "a_parting_shot_ii",
+  "title": "A Parting Shot II",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/apartingshotii_0.swf",
+  "description": "",
+  "developer": "Jeff Lash",
+  "category": "Stick Figure",
+  "tags": [],
+  "controls": "W - jump  A - move left  D - move right    mouse - aim  LMB - hold down for power, release to fire.",
+  "thumbnailUrl": "/games/assets/a_parting_shot_ii/thumbnail.jpg",
+  "previewUrl": "/games/assets/a_parting_shot_ii/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/a_parting_shot_ii/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Apr 2, 2007",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/apartingshotii_0.swf"
+}

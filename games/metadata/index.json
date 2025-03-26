@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-03-26",
+  "lastUpdated": "2025-03-27",
   "games": [
     {
       "id": "10_mahjong",
@@ -621,11 +621,101 @@
       "plays": 0,
       "thumbnailUrl": "/games/assets/a_day_in_the_museum/thumbnail.jpg",
       "added": "Aug 7, 2020"
+    },
+    {
+      "id": "a_parting_shot_ii",
+      "title": "A Parting Shot II",
+      "category": "Stick Figure",
+      "rating": 3.0,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a_parting_shot_ii/thumbnail.jpg",
+      "added": "Apr 2, 2007"
+    },
+    {
+      "id": "a_sliding_thing",
+      "title": "A Sliding Thing",
+      "category": "Hard",
+      "rating": 3.7,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a_sliding_thing/thumbnail.jpg",
+      "added": "Jan 16, 2020"
+    },
+    {
+      "id": "a-blast",
+      "title": "A-Blast",
+      "category": "Flying",
+      "rating": 3.1,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a-blast/thumbnail.jpg",
+      "added": "Oct 30, 2004"
+    },
+    {
+      "id": "a-hero",
+      "title": "A-Hero",
+      "category": "War",
+      "rating": 3.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a-hero/thumbnail.png",
+      "added": "Aug 26, 2010"
+    },
+    {
+      "id": "a_sugg_christmas",
+      "title": "A Sugg Christmas",
+      "category": "Cute Shooters",
+      "rating": 3.1,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a_sugg_christmas/thumbnail.jpg",
+      "added": "Dec 20, 2005"
+    },
+    {
+      "id": "a_tale_of_two_yetis",
+      "title": "A Tale of Two Yetis",
+      "category": "Classic",
+      "rating": 3.1,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a_tale_of_two_yetis/thumbnail.png",
+      "added": "Mar 1, 2010"
+    },
+    {
+      "id": "a_walk_in_the_park",
+      "title": "A Walk in the Park",
+      "category": "Cute",
+      "rating": 3.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/a_walk_in_the_park/thumbnail.jpg",
+      "added": "Jun 18, 2007"
+    },
+    {
+      "id": "abandoned_mysteries_asylum",
+      "title": "Abandoned Mysteries Asylum",
+      "category": "Escape",
+      "rating": 3.0,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/abandoned_mysteries_asylum/thumbnail.png",
+      "added": "Oct 26, 2016"
+    },
+    {
+      "id": "ab_30k_starfighter",
+      "title": "AB: 30K Starfighter",
+      "category": "War",
+      "rating": 3.0,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/ab_30k_starfighter/thumbnail.jpg",
+      "added": "Oct 27, 2004"
+    },
+    {
+      "id": "abandoned",
+      "title": "Abandoned",
+      "category": "Escape",
+      "rating": 3.4,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/abandoned/thumbnail.png",
+      "added": "Mar 10, 2016"
     }
   ],
   "categories": [
     {
-      "id": "brain_teasers_&_quizzes",
+      "id": "brain_teasers_quizzes",
       "name": "Brain Teasers & Quizzes",
       "count": 8
     },
@@ -692,7 +782,7 @@
     {
       "id": "flying",
       "name": "Flying",
-      "count": 1
+      "count": 2
     },
     {
       "id": "card",
@@ -707,12 +797,12 @@
     {
       "id": "cute",
       "name": "Cute",
-      "count": 1
+      "count": 2
     },
     {
       "id": "hard",
       "name": "Hard",
-      "count": 3
+      "count": 4
     },
     {
       "id": "avoider",
@@ -727,12 +817,12 @@
     {
       "id": "classic",
       "name": "Classic",
-      "count": 2
+      "count": 3
     },
     {
       "id": "escape",
       "name": "Escape",
-      "count": 2
+      "count": 4
     },
     {
       "id": "tycoon",
@@ -752,6 +842,21 @@
     {
       "id": "scary",
       "name": "Scary",
+      "count": 1
+    },
+    {
+      "id": "stick_figure",
+      "name": "Stick Figure",
+      "count": 1
+    },
+    {
+      "id": "war",
+      "name": "War",
+      "count": 2
+    },
+    {
+      "id": "cute_shooters",
+      "name": "Cute Shooters",
       "count": 1
     }
   ]

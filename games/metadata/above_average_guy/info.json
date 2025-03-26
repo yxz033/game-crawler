@@ -1,0 +1,22 @@
+{
+  "id": "above_average_guy",
+  "title": "Above Average Guy",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/above-average-guy.swf",
+  "description": "Here's your chance to be in a super-weird Japanese game show! You're gonna have to be waaaaaay above average to win this one!",
+  "developer": "Chris Jeff",
+  "category": "Cute",
+  "tags": [],
+  "controls": "Use your keyboard and mouse to play.",
+  "thumbnailUrl": "/games/assets/above_average_guy/thumbnail.png",
+  "previewUrl": "/games/assets/above_average_guy/thumbnail.png",
+  "previewVideoUrl": "/games/assets/above_average_guy/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "May 14, 2015",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/above-average-guy.swf"
+}

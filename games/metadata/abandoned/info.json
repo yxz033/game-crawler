@@ -1,0 +1,22 @@
+{
+  "id": "abandoned",
+  "title": "Abandoned",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/abandoned.swf",
+  "description": "Abandoned is the first part of strange story about parallel worlds. Explore the worlds to find your twin-brother who dedicate his life to finding out the way to Abandoned and disappeared there. There are secrets to be found if you're paying close attention.",
+  "developer": "Igor Krutov",
+  "category": "Escape",
+  "tags": [],
+  "controls": "Mouse controls",
+  "thumbnailUrl": "/games/assets/abandoned/thumbnail.png",
+  "previewUrl": "/games/assets/abandoned/thumbnail.png",
+  "previewVideoUrl": "/games/assets/abandoned/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Mar 10, 2016",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/abandoned.swf"
+}

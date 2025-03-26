@@ -1,0 +1,22 @@
+{
+  "id": "ace_blackjack",
+  "title": "Ace Blackjack",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/aceblackjack_0.swf",
+  "description": "",
+  "developer": "Addicting Games",
+  "category": "Tycoon",
+  "tags": [],
+  "controls": "Place your bet. Hit for another card. Stand when you are done. Attempt to get as close to 21 without going over.",
+  "thumbnailUrl": "/games/assets/ace_blackjack/thumbnail.jpg",
+  "previewUrl": "/games/assets/ace_blackjack/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/ace_blackjack/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 31, 2004",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/aceblackjack_0.swf"
+}

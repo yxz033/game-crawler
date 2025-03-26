@@ -1,0 +1,22 @@
+{
+  "id": "a-hero",
+  "title": "A-Hero",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/ahero_0.swf",
+  "description": "",
+  "developer": "Niklas Erhard Olsson",
+  "category": "War",
+  "tags": [],
+  "controls": "mouse controls",
+  "thumbnailUrl": "/games/assets/a-hero/thumbnail.png",
+  "previewUrl": "/games/assets/a-hero/thumbnail.png",
+  "previewVideoUrl": "/games/assets/a-hero/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Aug 26, 2010",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/ahero_0.swf"
+}

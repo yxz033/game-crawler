@@ -1,0 +1,22 @@
+{
+  "id": "abobo_s_big_adventure",
+  "title": "Abobo's Big Adventure",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/abobos-big-adventure_0.swf",
+  "description": "",
+  "developer": "PestoForce",
+  "category": "Fighting",
+  "tags": [],
+  "controls": "",
+  "thumbnailUrl": "/games/assets/abobo_s_big_adventure/thumbnail.png",
+  "previewUrl": "/games/assets/abobo_s_big_adventure/thumbnail.png",
+  "previewVideoUrl": "/games/assets/abobo_s_big_adventure/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jul 31, 2015",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/abobos-big-adventure_0.swf"
+}

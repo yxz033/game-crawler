@@ -1,0 +1,22 @@
+{
+  "id": "acceleration_maze",
+  "title": "Acceleration Maze",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/accelerationmaze_0.swf",
+  "description": "",
+  "developer": "Timothy Lane",
+  "category": "Hard",
+  "tags": [],
+  "controls": "arrow keys to get home",
+  "thumbnailUrl": "/games/assets/acceleration_maze/thumbnail.jpg",
+  "previewUrl": "/games/assets/acceleration_maze/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/acceleration_maze/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "May 15, 2008",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/accelerationmaze_0.swf"
+}

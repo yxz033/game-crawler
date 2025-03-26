@@ -1,0 +1,22 @@
+{
+  "id": "academy_trainer",
+  "title": "Academy Trainer",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/academytrainer_0.swf",
+  "description": "",
+  "developer": "Paramount Pictures",
+  "category": "Celebrity",
+  "tags": [],
+  "controls": "Mouse to complete tasks.",
+  "thumbnailUrl": "/games/assets/academy_trainer/thumbnail.jpg",
+  "previewUrl": "/games/assets/academy_trainer/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/academy_trainer/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jun 8, 2009",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/academytrainer_0.swf"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "a_sliding_thing",
+  "title": "A Sliding Thing",
+  "url": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/a-sliding-thing/index.html",
+  "description": "A Sliding Thing is a free mobile puzzle game. Things slide. It is a fact of life. Your job is to make the sliding matter, to make the sliding count. You can't just let things slide out of control. You must impart order on the sliding. Structure. Direction. Vision. Take this red dot, for example, it needs to be slid into a black hole on the other side of the map. It can be done. These maps were designed by a human and thus they can be figured out by a human. That doesn't mean it'll be easy, it doesn't mean it'll be fast, in fact, it doesn't even mean it'll be fun. Most puzzle games aren't fun. In fact, the best puzzle games are downright punishing and frustrating. You slide and you slide but you just can't make it to the black hole. That is the nature of the slide. We don't solve puzzles because its easy we solve puzzles because it's hard. Some people spend their whole life without trying to solve mobile puzzles. It is a shame. It is a waste. The feeling of fulfillment you get when you deposit the red ball into the inky black void is a universal feeling of achievement that exists in the hearts of all mankind and can trace its roots to the dawn of man. By sliding this red ball into a black hole you are communing with your ancestors, your grandchildren, and the universe itself. All because you choose to slide.",
+  "developer": "Diamonax",
+  "category": "Hard",
+  "tags": [],
+  "controls": "On a mobile device use your finger to slide the red dot around the map until you are able to guide it into the black void.\r\nOn desktop, use your mouse to point, click, and drag the ball into the void.",
+  "thumbnailUrl": "/games/assets/a_sliding_thing/thumbnail.jpg",
+  "previewUrl": "/games/assets/a_sliding_thing/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/a_sliding_thing/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jan 16, 2020",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/a-sliding-thing/index.html"
+}

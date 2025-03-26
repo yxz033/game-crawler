@@ -1,0 +1,22 @@
+{
+  "id": "abandoned_the_cube_chambers",
+  "title": "Abandoned: The Cube Chambers",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/abandoned-cube-chambers.swf",
+  "description": "You woke up confused and disoriented inside a pyramid maze filled with a lot of cube chambers. You remember nothing, who you are, how you got there. You only know one thing...you must escape!",
+  "developer": "Igor Krutov",
+  "category": "Escape",
+  "tags": [],
+  "controls": "Mouse controls",
+  "thumbnailUrl": "/games/assets/abandoned_the_cube_chambers/thumbnail.png",
+  "previewUrl": "/games/assets/abandoned_the_cube_chambers/thumbnail.png",
+  "previewVideoUrl": "/games/assets/abandoned_the_cube_chambers/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Mar 24, 2016",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/abandoned-cube-chambers.swf"
+}

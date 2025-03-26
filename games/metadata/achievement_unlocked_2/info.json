@@ -1,0 +1,22 @@
+{
+  "id": "achievement_unlocked_2",
+  "title": "Achievement Unlocked 2",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/achievement-unlocked-2.swf",
+  "description": "Need more accomplishments? Addicted to badges? Get down with the heaviest achiever on the scene: Blue Elephant! Every move you make gets you closer to earning all those pretty badges. Win everything by doing anything!",
+  "developer": "ArmorGames",
+  "category": "Random",
+  "tags": [],
+  "controls": "Arrow keys",
+  "thumbnailUrl": "",
+  "previewUrl": "",
+  "previewVideoUrl": "/games/assets/achievement_unlocked_2/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "May 30, 2012",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/achievement-unlocked-2.swf"
+}

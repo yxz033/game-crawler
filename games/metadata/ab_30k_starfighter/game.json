@@ -1,0 +1,22 @@
+{
+  "id": "ab_30k_starfighter",
+  "title": "AB: 30K Starfighter",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/ab30kstarfighter.swf",
+  "description": "",
+  "developer": "DeadHounds.com",
+  "category": "War",
+  "tags": [],
+  "controls": "ARROWS to move.  SPACE to fire.",
+  "thumbnailUrl": "/games/assets/ab_30k_starfighter/thumbnail.jpg",
+  "previewUrl": "/games/assets/ab_30k_starfighter/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/ab_30k_starfighter/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Oct 27, 2004",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/ab30kstarfighter.swf"
+}

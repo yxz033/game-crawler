@@ -1,0 +1,22 @@
+{
+  "id": "a_walk_in_the_park",
+  "title": "A Walk in the Park",
+  "url": "https://prod.addictinggames.com/sites/default/files/flash_games/awalkinthepark_0.swf",
+  "description": "",
+  "developer": "Dead Toast Entertainment",
+  "category": "Cute",
+  "tags": [],
+  "controls": "Arrow keys to move",
+  "thumbnailUrl": "/games/assets/a_walk_in_the_park/thumbnail.jpg",
+  "previewUrl": "/games/assets/a_walk_in_the_park/thumbnail.jpg",
+  "previewVideoUrl": "/games/assets/a_walk_in_the_park/preview.mp4",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jun 18, 2007",
+  "lastUpdated": "2025-03-27",
+  "gameUrl": "https://prod.addictinggames.com/sites/default/files/flash_games/awalkinthepark_0.swf"
+}
