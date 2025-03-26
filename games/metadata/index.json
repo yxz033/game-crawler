@@ -1,0 +1,21 @@
+{
+  "lastUpdated": "2025-03-26",
+  "games": [
+    {
+      "id": "10_mahjong",
+      "title": "10 Mahjong",
+      "category": "Brain Teasers & Quizzes",
+      "rating": 4.2,
+      "plays": 0,
+      "thumbnailUrl": "/games/assets/10_mahjong/thumbnail.webp",
+      "added": "Jan 21, 2020"
+    }
+  ],
+  "categories": [
+    {
+      "id": "brain_teasers_&_quizzes",
+      "name": "Brain Teasers & Quizzes",
+      "count": 1
+    }
+  ]
+}

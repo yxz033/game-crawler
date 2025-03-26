@@ -1,0 +1,21 @@
+{
+  "id": "10_mahjong",
+  "title": "10 Mahjong",
+  "url": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/10-mahjong/index.html",
+  "description": "10 Mahjong is a unique version of the class mahjong game This is a different take on the class game where you need to have your math skills ready. Instead of matching tiles with the same icon, you must find 2 tiles of the same kind that will add up to 10. Add up the tiles before the timer runs out in order to advance to the next level. There are 15 levels of this mahjong game for you to solve. Each level has its own pattern and difficulty. To help you out, open tiles will be lit up while the others will have a shadow across them. Work quickly to make all of the tiles disappear before your timer goes out, otherwise, you’ll have to start over. Once you’ve solved all 15 levels, your score will be automatically submitted. Click on the high scores button from the menu to see where you rank against other puzzle players.",
+  "developer": "Neon Games",
+  "category": "Brain Teasers & Quizzes",
+  "tags": [],
+  "controls": "To play this online puzzle game, click on 2 of the same tiles that will add up to 10. Each tile must be open which means at least one side must be free and it cannot be covered by another tile. In the righthand corner, you will see your score, level, and the timer. You’ll also see the options for hint and shuffle.",
+  "thumbnailUrl": "/games/assets/10_mahjong/thumbnail.webp",
+  "previewUrl": "/games/assets/10_mahjong/preview.webp",
+  "screenshots": [],
+  "features": [],
+  "device": {
+    "mobile": true,
+    "desktop": true
+  },
+  "addedDate": "Jan 21, 2020",
+  "lastUpdated": "2025-03-26",
+  "gameUrl": "https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/10-mahjong/index.html"
+}
